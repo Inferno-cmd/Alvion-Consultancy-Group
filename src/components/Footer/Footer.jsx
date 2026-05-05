@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Footer.css';
-import { FaPhoneAlt, FaFacebookF, FaTwitter, FaLinkedinIn, FaChevronRight } from 'react-icons/fa';
+import { FaPhoneAlt, FaFacebookF, FaTwitter, FaLinkedinIn, FaPaperPlane, FaCommentDots } from 'react-icons/fa';
 import logo from '../../assets/logo.png'; 
 
 const Footer = () => {
@@ -21,13 +21,14 @@ const Footer = () => {
   const addComment = (e) => {
     e.preventDefault();
     if (!newComment.trim()) return;
-    setComments([{ id: Date.now(), user: "Guest", text: newComment }, ...comments]);
+    setComments([{ id: Date.now(), user: "Client", text: newComment }, ...comments]);
     setNewComment("");
   };
 
   return (
     <footer className="footer-section">
       <div className="footer-container">
+        {/* Brand Column */}
         <div className="footer-col brand-col">
           <img src={logo} alt="NexaTech Logo" className="footer-logo" />
           <p className="footer-desc">
@@ -45,6 +46,7 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Contact Column */}
         <div className="footer-col">
           <h3 className="footer-title">Contact Us</h3>
           <form className="footer-email-form" onSubmit={handleContactSubmit}>
@@ -56,19 +58,20 @@ const Footer = () => {
           </form>
         </div>
 
+       
         <div className="footer-col">
           <h3 className="footer-title">Feedback</h3>
-          <div className="comments-display-box">
-            {comments.map(c => (
-              <div key={c.id} className="mini-comment">
-                <strong>{c.user}:</strong> {c.text}
-              </div>
-            ))}
+          <div className="feedback-wrapper">
+            <form className="comment-post-area" onSubmit={addComment}>
+              <input 
+                type="text" 
+                placeholder="Add comment" 
+                value={newComment} 
+                onChange={(e) => setNewComment(e.target.value)} 
+              />
+              <button type="submit" className="footer-interactive-btn post-btn">Post</button>
+            </form>
           </div>
-          <form className="comment-post-area" onSubmit={addComment}>
-            <input type="text" placeholder="Add comment" value={newComment} onChange={(e) => setNewComment(e.target.value)} />
-            <button type="submit" className="footer-interactive-btn small">Post</button>
-          </form>
         </div>
       </div>
 
