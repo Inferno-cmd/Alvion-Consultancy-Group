@@ -1,6 +1,6 @@
 .testimonials-section {
   padding: 100px 10%;
-  background-color: #ffffff; /* Clean white background to contrast with the dark blue header */
+  background-color: #ffffff; 
   font-family: 'Segoe UI', sans-serif;
 }
 
@@ -10,14 +10,14 @@
 }
 
 .testimonials-header .overline {
-  color: #a3cf62; /* Matching the green accent from Screenshot (33).jpg */
+  color: #a3cf62; 
   font-weight: bold;
   letter-spacing: 2px;
   margin-bottom: 10px;
 }
 
 .testimonials-header .main-title {
-  color: #0d234d; /* NexaTech Dark Blue[cite: 1] */
+  color: #0d234d; 
   font-size: 2.5rem;
   font-weight: 800;
 }
@@ -31,7 +31,7 @@
 }
 
 .testimonial-card {
-  background-color: #f8faff; /* Very light blue tint */
+  background-color: #f8faff; 
   padding: 40px 30px;
   border-radius: 8px;
   position: relative;

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Testimonial.css';
+import './Testimonials.css';
 
 const Testimonials = () => {
   const reviews = [
@@ -21,12 +21,12 @@ const Testimonials = () => {
       role: "Operations Manager, City Health Clinic",
       feedback: "Reliability is non-negotiable in healthcare. NexaTech's 2-hour SLA gives us peace of mind knowing that our patient data systems are monitored and patched around the clock."
     },
-    /*{
+    {
       id: 4,
       name: "Mark Thompson",
       role: "Director, Global Logistics Ltd",
       feedback: "Their cabling and CCTV deployment was professional and on schedule. It’s a relief to have one partner who understands both our physical infrastructure and our software troubleshooting."
-    }*/
+    }
   ];
 
   return (

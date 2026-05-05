@@ -78,3 +78,30 @@
   font-size: 0.85rem;
   opacity: 0.7;
 }
+
+.pillars-grid, .testimonials-grid, .logo-grid {
+  display: grid;
+  grid-template-columns: 1fr; 
+  gap: 20px;
+  padding: 20px;
+}
+
+
+@media (min-width: 768px) {
+  .pillars-grid, .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .logo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .pillars-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .logo-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
