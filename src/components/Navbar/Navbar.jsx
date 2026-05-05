@@ -1,29 +1,59 @@
-import React, { useState, useEffect } from 'react'
-import './Navbar.css'
-import logo from '../../assets/logo.png'
+import React, { useState, useEffect } from 'react';
+import './Navbar.css';
+import logo from '../../assets/logo.png';
+import { FaBars, FaTimes, FaSearch } from 'react-icons/fa'; 
 
 const Navbar = () => {
-    const [sticky, setSticky] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
-    // Adds a dark background to navbar when scrolling
-    useEffect(() => {
-        window.addEventListener('scroll', () => {
-            window.scrollY > 50 ? setSticky(true) : setSticky(false);
-        })
-    }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-    return (
-        <nav className={`container ${sticky ? 'dark-nav' : ''}`}>
-            <img src={logo} alt='NexaTech Logo' className='logo'/>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#solutions">Our Solution</a></li>
-                <li><a href="#about">About us</a></li>
-                <li><a href="#services">Products & services</a></li>
-                <li><a href="#testimonials">Testimonial</a></li>
-                <li><a href="#contact"><button className='btn'>Contact Us</button></a></li>
-            </ul>
-        </nav>
-    )
-} 
-export default Navbar
+  const handleLinkClick = () => setIsMenuOpen(false);
+
+  return (
+    <nav className={`nx-navbar ${isSticky ? 'nx-sticky' : ''}`}>
+      <div className="nx-container">
+        <div className="nx-logo-wrapper">
+          <img src={logo} alt="NexaTech" className="nx-logo" />
+        </div>
+
+        <ul className={`nx-nav-links ${isMenuOpen ? 'nx-open' : ''}`}>
+          <li><a href="#hero" onClick={handleLinkClick}>Home</a></li>
+          <li><a href="#solutions" onClick={handleLinkClick}>Our Solution</a></li>
+          <li><a href="#about" onClick={handleLinkClick}>About us</a></li>
+          <li><a href="#services" onClick={handleLinkClick}>Products & services</a></li>
+          <li><a href="#testimonials" onClick={handleLinkClick}>Testimonial</a></li>
+          <li className="nx-search-item">
+            <div className="nx-search-box">
+              <input 
+                type="text" 
+                placeholder="Search..." 
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <FaSearch className="nx-search-icon" />
+            </div>
+          </li>
+
+          <li className="nx-cta-li">
+            <a href="#contact" onClick={handleLinkClick} className="nx-btn">Contact Us</a>
+          </li>
+        </ul>
+
+        <div className="nx-menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          {isMenuOpen ? <FaTimes /> : <FaBars />}
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
