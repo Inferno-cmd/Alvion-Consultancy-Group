@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import logo from '../../assets/logo.png';
-import { FaBars, FaTimes, FaSearch } from 'react-icons/fa'; 
+import { FaBars, FaTimes, FaSearch } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -16,7 +16,8 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleLinkClick = () => setIsMenuOpen(false);
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <nav className={`nx-navbar ${isSticky ? 'nx-sticky' : ''}`}>
@@ -25,12 +26,13 @@ const Navbar = () => {
           <img src={logo} alt="NexaTech" className="nx-logo" />
         </div>
 
+  
         <ul className={`nx-nav-links ${isMenuOpen ? 'nx-open' : ''}`}>
-          <li><a href="#hero" onClick={handleLinkClick}>Home</a></li>
-          <li><a href="#solutions" onClick={handleLinkClick}>Our Solution</a></li>
-          <li><a href="#about" onClick={handleLinkClick}>About us</a></li>
-          <li><a href="#services" onClick={handleLinkClick}>Products & services</a></li>
-          <li><a href="#testimonials" onClick={handleLinkClick}>Testimonial</a></li>
+          {/* Close Icon inside the menu for mobile */}
+          <li className="nx-close-menu" onClick={closeMenu}>
+            <FaTimes />
+          </li>
+
           <li className="nx-search-item">
             <div className="nx-search-box">
               <input 
@@ -43,13 +45,18 @@ const Navbar = () => {
             </div>
           </li>
 
+          <li><a href="#hero" onClick={closeMenu}>Home</a></li>
+          <li><a href="#solutions" onClick={closeMenu}>Our Solution</a></li>
+          <li><a href="#about" onClick={closeMenu}>About us</a></li>
+          <li><a href="#services" onClick={closeMenu}>Products & services</a></li>
+          <li><a href="#testimonials" onClick={closeMenu}>Testimonial</a></li>
           <li className="nx-cta-li">
-            <a href="#contact" onClick={handleLinkClick} className="nx-btn">Contact Us</a>
+            <a href="#contact" onClick={closeMenu} className="nx-btn">Contact Us</a>
           </li>
         </ul>
 
-        <div className="nx-menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          {isMenuOpen ? <FaTimes /> : <FaBars />}
+         <div className="nx-menu-toggle" onClick={toggleMenu}>
+          <FaBars />
         </div>
       </div>
     </nav>

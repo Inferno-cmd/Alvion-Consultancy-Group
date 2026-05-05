@@ -154,3 +154,72 @@
     font-size: 16px;
   }
 }
+
+
+
+
+
+
+
+.nx-close-menu {
+  display: none; 
+}
+
+/* --- MOBILE BREAKPOINT --- */
+@media screen and (max-width: 900px) {
+  .nx-menu-toggle {
+    display: block;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .nx-close-menu {
+    display: block;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 30px;
+    color: #a3cf62; 
+    cursor: pointer;
+  }
+
+  .nx-nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: #0d234d; 
+    display: flex;
+    flex-direction: column;
+    
+    /* ALIGN TO UPPER SIDE */
+    justify-content: flex-start; 
+    padding-top: 80px; 
+    
+    gap: 20px;
+    transition: 0.5s ease-in-out;
+    z-index: 10000;
+  }
+
+  .nx-nav-links.nx-open {
+    right: 0;
+  }
+
+  .nx-nav-links li {
+    width: 100%;
+    text-align: left;
+    padding-left: 40px; 
+  }
+
+  .nx-search-item {
+    margin-bottom: 20px;
+    padding-left: 20px !important;
+    padding-right: 20px;
+  }
+
+  .nx-search-box {
+    width: 100%;
+  }
+}
