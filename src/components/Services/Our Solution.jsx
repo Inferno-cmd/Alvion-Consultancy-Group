@@ -26,23 +26,27 @@ const OurSolution = () => {
   ];
 
   return (
-    <section className="solutions-container">
-      <div className="solutions-header">
-        <h4 className="overline">OUR SOLUTION</h4>
-        <h1>One Partner, Total Ownership.</h1>
-        <p className="subtitle">
-          NexaTech operates as a full-cycle Value-Added Reseller - we consult, 
-          procure, deploy and maintain technology for our clients.
-        </p>
-      </div>
-      <div className="cards-grid">
-        {solutions.map((item) => (
-          <div key={item.number} className="solution-card">
-            <div className="circle-number">{item.number}</div>
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
-          </div>
-        ))}
+      <section className="solutions-section" id="solutions">
+      <div className="solutions-container">
+        <div className="solutions-header">
+          <h4 className="overline">OUR SOLUTION</h4>
+          <h1>One Partner, Total Ownership.</h1>
+          <p className="subtitle">
+            NexaTech operates as a full-cycle Value-Added Reseller - we consult, 
+            procure, deploy and maintain technology for our clients.
+          </p>
+        </div>
+
+
+        <div className="pillars-grid">
+          {solutions.map((item) => (
+            <div key={item.number} className="pillar-card">
+              <div className="circle-number">{item.number}</div>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
