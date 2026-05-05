@@ -1,5 +1,5 @@
 .footer-section {
-  background-color: #0d234d; /* NexaTech Dark Blue[cite: 1] */
+  background-color: #0d234d; 
   color: #ffffff;
   padding: 80px 0 0 0;
   font-family: 'Segoe UI', sans-serif;
@@ -51,7 +51,7 @@
 }
 
 .footer-links a:hover {
-  color: #a3cf62; /* NexaTech Green[cite: 1] */
+  color: #a3cf62; 
 }
 
 .dash {
@@ -62,7 +62,7 @@
   display: inline-block;
 }
 
-/* Contact Card Styling */
+
 .contact-card {
   background-color: rgba(255, 255, 255, 0.05);
   padding: 30px;
@@ -122,7 +122,6 @@
   background: #a3cf62;
 }
 
-/* Bottom Bar */
 .footer-bottom {
   background-color: #081631;
   padding: 25px 5%;
@@ -145,7 +144,7 @@
   margin: 0 10px;
 }
 
-/* Responsive */
+
 @media (max-width: 992px) {
   .footer-container {
     grid-template-columns: 1fr 1fr;

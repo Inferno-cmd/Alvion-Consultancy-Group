@@ -1,14 +1,12 @@
 import React from 'react';
 import './Footer.css';
 import { FaPhoneAlt, FaFacebookF, FaTwitter, FaLinkedinIn, FaChevronRight } from 'react-icons/fa';
-import logo from '../../assets/logo.png'; // Use your actual logo path
+import logo from '../../assets/logo.png'; 
 
 const Footer = () => {
   return (
     <footer className="footer-section">
       <div className="footer-container">
-        
-        {/* Brand Column */}
         <div className="footer-col brand-col">
           <img src={logo} alt="NexaTech Logo" className="footer-logo" />
           <p className="footer-desc">
@@ -20,8 +18,7 @@ const Footer = () => {
           </a>
         </div>
 
-        {/* Quick Links Column */}
-        <div className="footer-col">
+               <div className="footer-col">
           <h3 className="footer-title">Links</h3>
           <ul className="footer-links">
             <li><a href="/"><span className="dash"></span> Home</a></li>
@@ -32,7 +29,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Services Column */}
+        
         <div className="footer-col">
           <h3 className="footer-title">Our Services</h3>
           <ul className="footer-links">
@@ -44,7 +41,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Contact Column */}
+        
         <div className="footer-col contact-card-col">
           <div className="contact-card">
             <h3 className="card-title">Quick Contacts</h3>
@@ -69,7 +66,7 @@ const Footer = () => {
 
       </div>
 
-      {/* Bottom Bar */}
+     
       <div className="footer-bottom">
         <div className="bottom-content">
           <p>Copyright © 2026 .Designed and Maintained by <strong>NexaTech Team</strong>. All rights reserved.</p>
