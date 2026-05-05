@@ -1,0 +1,109 @@
+.about-section {
+  padding: 100px 10%;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 80px; /* Increased gap to match Screenshot (33).jpg */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Image Styling */
+.about-image-wrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.about-main-image {
+  width: 100%;
+  max-width: 450px; /* Keeps the vertical image from getting too massive */
+  height: auto;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* The light blue accent box from Screenshot (33).jpg */
+.image-border-accent {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 80%;
+  height: 90%;
+  background-color: #eef4ff; /* NexaTech light blue accent */
+  z-index: 1;
+}
+
+/* Content Styling */
+.about-content {
+  flex: 1.2; /* Gives text slightly more room */
+}
+
+.about-overline {
+  color: #a3cf62; /* Green accent slash style from Screenshot (33).jpg */
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 1.5px;
+  font-size: 0.9rem;
+}
+
+.about-title {
+  color: #0d234d; /* NexaTech Dark Blue[cite: 1] */
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  font-weight: 800;
+}
+
+.about-text p {
+  color: #4a4a4a;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+}
+
+.read-more-btn {
+  background-color: #ffffff;
+  border: 2px solid #0d234d;
+  color: #0d234d;
+  padding: 14px 35px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.read-more-btn:hover {
+  background-color: #0d234d;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Responsive for Tablets/Mobile */
+@media (max-width: 1024px) {
+  .about-container {
+    flex-direction: column;
+    text-align: left;
+    gap: 50px;
+  }
+  
+  .about-image-wrapper {
+    width: 100%;
+  }
+
+  .image-border-accent {
+    left: 0;
+    width: 90%;
+  }
+  
+  .about-title {
+    font-size: 2.2rem;
+  }
+}

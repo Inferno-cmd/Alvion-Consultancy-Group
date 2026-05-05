@@ -1,0 +1,164 @@
+.footer-section {
+  background-color: #0d234d; /* NexaTech Dark Blue[cite: 1] */
+  color: #ffffff;
+  padding: 80px 0 0 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr 1.5fr;
+  gap: 40px;
+  padding: 0 5% 60px 5%;
+}
+
+.footer-logo {
+  max-width: 180px;
+  margin-bottom: 25px;
+}
+
+.footer-desc {
+  color: #c4c4c4;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+}
+
+.footer-title {
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  position: relative;
+  font-weight: 700;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  color: #c4c4c4;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.footer-links a:hover {
+  color: #a3cf62; /* NexaTech Green[cite: 1] */
+}
+
+.dash {
+  width: 12px;
+  height: 2px;
+  background-color: #a3cf62;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+/* Contact Card Styling */
+.contact-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-left: 4px solid #a3cf62;
+  border-radius: 4px;
+}
+
+.card-title {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.phone-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin: 20px 0;
+  color: #ffffff;
+}
+
+.phone-icon {
+  color: #a3cf62;
+}
+
+.appointment-link, .direction-link {
+  color: #a3cf62;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.footer-socials a {
+  background: rgba(255, 255, 255, 0.1);
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.footer-socials a:hover {
+  background: #a3cf62;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  background-color: #081631;
+  padding: 25px 5%;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bottom-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.bottom-links a {
+  color: #888;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+  .bottom-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
