@@ -1,7 +1,6 @@
 import React from 'react';
 import './social.css';
-// Ensure the path ends in /fa6 or /fa (try /fa first)
-import { FaPhoneAlt, FaWhatsapp, FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { FaPhoneAlt, FaWhatsapp, FaFacebookF, FaLinkedinIn, FaXTwitter } from "react-icons/fa";
 
 const Social = () => {
   return (
@@ -10,7 +9,7 @@ const Social = () => {
       <a href="https://wa.me/254740746138" className="social-icon whatsapp"><FaWhatsapp /></a>
       <a href="#" className="social-icon facebook"><FaFacebookF /></a>
       <a href="#" className="social-icon linkedin"><FaLinkedinIn /></a>
-      <a href="#" className="social-icon twitter"><FaTwitter /></a>
+      <a href="#" className="social-icon twitter"><FaXTwitter /></a>
     </div>
   );
 };
