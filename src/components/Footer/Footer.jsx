@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Footer.css';
-import { FaPhoneAlt, FaFacebookF, FaTwitter, FaLinkedinIn, FaPaperPlane, FaCommentDots } from 'react-icons/fa';
+import { FaPhoneAlt, FaFacebookF, FaTwitter, FaLinkedinIn, FaChevronRight, FaWhatsapp } from 'react-icons/fa';
 import logo from '../../assets/logo.png'; 
 
 const Footer = () => {
@@ -28,7 +28,6 @@ const Footer = () => {
   return (
     <footer className="footer-section">
       <div className="footer-container">
-        {/* Brand Column */}
         <div className="footer-col brand-col">
           <img src={logo} alt="NexaTech Logo" className="footer-logo" />
           <p className="footer-desc">
@@ -45,8 +44,6 @@ const Footer = () => {
             <a href="#"><FaLinkedinIn /></a>
           </div>
         </div>
-
-        {/* Contact Column */}
         <div className="footer-col">
           <h3 className="footer-title">Contact Us</h3>
           <form className="footer-email-form" onSubmit={handleContactSubmit}>
@@ -58,10 +55,16 @@ const Footer = () => {
           </form>
         </div>
 
-       
         <div className="footer-col">
           <h3 className="footer-title">Feedback</h3>
           <div className="feedback-wrapper">
+            <div className="comments-display-box">
+              {comments.map(c => (
+                <div key={c.id} className="mini-comment">
+                  <strong>{c.user}:</strong> {c.text}
+                </div>
+              ))}
+            </div>
             <form className="comment-post-area" onSubmit={addComment}>
               <input 
                 type="text" 
@@ -83,6 +86,14 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <a 
+        href="https://wa.me/254740746138" 
+        className="whatsapp-float" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        <FaWhatsapp />
+      </a>
     </footer>
   );
 };
