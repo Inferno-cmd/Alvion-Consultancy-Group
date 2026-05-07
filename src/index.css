@@ -53,3 +53,14 @@ img {
   max-width: 100%; 
   height: auto;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+footer {
+  scroll-margin-top: 90px;
+}

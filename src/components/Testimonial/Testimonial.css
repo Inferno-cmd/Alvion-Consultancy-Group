@@ -87,7 +87,7 @@
   letter-spacing: 0.5px;
 }
 
-/* Mobile adjustments */
+
 @media (max-width: 768px) {
   .testimonials-section {
     padding: 60px 5%;

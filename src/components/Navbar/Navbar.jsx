@@ -19,6 +19,41 @@ const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
+  // --- Search Functionality ---
+  const handleSearch = (e) => {
+    if (e.key === 'Enter') {
+      const query = searchQuery.toLowerCase().trim();
+      
+      // Mapping common keywords to section IDs
+      const sectionMap = {
+        'home': 'hero',
+        'solution': 'solutions',
+        'solutions': 'solutions',
+        'about': 'about',
+        'product': 'services',
+        'products': 'services',
+        'service': 'services',
+        'services': 'services',
+        'testimonial': 'testimonials',
+        'testimonials': 'testimonials',
+        'contact': 'contact',
+        'feedback': 'contact',
+        'email': 'contact'
+      };
+
+      const targetId = sectionMap[query] || query;
+      const element = document.getElementById(targetId);
+
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setSearchQuery(""); // Clear search after successful scroll
+        closeMenu();
+      } else {
+        alert("Section not found. Try searching for 'Solutions' or 'Contact'.");
+      }
+    }
+  };
+
   return (
     <nav className={`nx-navbar ${isSticky ? 'nx-sticky' : ''}`}>
       <div className="nx-container">
@@ -26,9 +61,7 @@ const Navbar = () => {
           <img src={logo} alt="NexaTech" className="nx-logo" />
         </div>
 
-  
         <ul className={`nx-nav-links ${isMenuOpen ? 'nx-open' : ''}`}>
-          {/* Close Icon inside the menu for mobile */}
           <li className="nx-close-menu" onClick={closeMenu}>
             <FaTimes />
           </li>
@@ -40,6 +73,7 @@ const Navbar = () => {
                 placeholder="Search..." 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={handleSearch} // Triggers search on Enter key
               />
               <FaSearch className="nx-search-icon" />
             </div>
