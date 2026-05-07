@@ -3,6 +3,13 @@ import './Hero.css';
 import { FaChevronRight } from 'react-icons/fa';
 
 const Hero = () => {
+  const handleLearnMore = () => {
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="hero-section" id="hero">
       <div className="hero-overlay">
@@ -10,7 +17,9 @@ const Hero = () => {
           <h1>NexaTech Solutions Limited</h1>
           <h2>Empowering Businesses with Enterprise Technology</h2>
           <p>Innovative value-oriented tech services for organizations and growing brands.</p>
-          <button className="hero-btn">LEARN MORE <FaChevronRight /></button>
+          <button className="hero-btn" onClick={handleLearnMore}>
+            LEARN MORE <FaChevronRight />
+          </button>
         </div>
 
         <div className="hero-cards-container">

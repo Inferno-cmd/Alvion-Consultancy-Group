@@ -19,12 +19,9 @@ const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
-  // --- Search Functionality ---
   const handleSearch = (e) => {
     if (e.key === 'Enter') {
       const query = searchQuery.toLowerCase().trim();
-      
-      // Mapping common keywords to section IDs
       const sectionMap = {
         'home': 'hero',
         'solution': 'solutions',
@@ -46,10 +43,10 @@ const Navbar = () => {
 
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
-        setSearchQuery(""); // Clear search after successful scroll
+        setSearchQuery("");
         closeMenu();
       } else {
-        alert("Section not found. Try searching for 'Solutions' or 'Contact'.");
+        alert("Section not found. Try 'Solutions' or 'Contact'.");
       }
     }
   };
@@ -65,7 +62,6 @@ const Navbar = () => {
           <li className="nx-close-menu" onClick={closeMenu}>
             <FaTimes />
           </li>
-
           <li className="nx-search-item">
             <div className="nx-search-box">
               <input 
@@ -73,12 +69,11 @@ const Navbar = () => {
                 placeholder="Search..." 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                onKeyDown={handleSearch} // Triggers search on Enter key
+                onKeyDown={handleSearch}
               />
               <FaSearch className="nx-search-icon" />
             </div>
           </li>
-
           <li><a href="#hero" onClick={closeMenu}>Home</a></li>
           <li><a href="#solutions" onClick={closeMenu}>Our Solution</a></li>
           <li><a href="#about" onClick={closeMenu}>About us</a></li>
@@ -88,7 +83,6 @@ const Navbar = () => {
             <a href="#contact" onClick={closeMenu} className="nx-btn">Contact Us</a>
           </li>
         </ul>
-
          <div className="nx-menu-toggle" onClick={toggleMenu}>
           <FaBars />
         </div>

@@ -7,12 +7,10 @@
 .about-container {
   display: flex;
   align-items: center;
-  gap: 80px; /* Increased gap to match Screenshot (33).jpg */
+  gap: 80px; 
   max-width: 1200px;
   margin: 0 auto;
 }
-
-/* Image Styling */
 .about-image-wrapper {
   flex: 1;
   position: relative;
@@ -22,31 +20,30 @@
 
 .about-main-image {
   width: 100%;
-  max-width: 450px; /* Keeps the vertical image from getting too massive */
+  max-width: 450px; 
   height: auto;
   position: relative;
   z-index: 2;
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  border-radius: 4px; 
 }
 
-/* The light blue accent box from Screenshot (33).jpg */
 .image-border-accent {
   position: absolute;
   top: -30px;
   left: -30px;
   width: 80%;
   height: 90%;
-  background-color: #eef4ff; /* NexaTech light blue accent */
+  background-color: #eef4ff; 
   z-index: 1;
 }
 
-/* Content Styling */
 .about-content {
-  flex: 1.2; /* Gives text slightly more room */
+  flex: 1.2; 
 }
 
 .about-overline {
-  color: #a3cf62; /* Green accent slash style from Screenshot (33).jpg */
+  color: #a3cf62; 
   font-weight: bold;
   margin-bottom: 10px;
   letter-spacing: 1.5px;
@@ -54,7 +51,7 @@
 }
 
 .about-title {
-  color: #0d234d; /* NexaTech Dark Blue[cite: 1] */
+  color: #0d234d; 
   font-size: 3rem;
   line-height: 1.1;
   margin-bottom: 25px;
@@ -85,8 +82,6 @@
   color: #ffffff;
   transform: translateY(-2px);
 }
-
-/* Responsive for Tablets/Mobile */
 @media (max-width: 1024px) {
   .about-container {
     flex-direction: column;
@@ -100,6 +95,7 @@
 
   .image-border-accent {
     left: 0;
+    top: -20px;
     width: 90%;
   }
   
