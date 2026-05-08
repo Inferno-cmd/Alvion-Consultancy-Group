@@ -1,105 +1,152 @@
-.about-section {
-  padding: 100px 10%;
-  background-color: #ffffff;
-  font-family: 'Segoe UI', sans-serif;
+.about-page-wrapper {
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    background-color: #fff;
 }
 
-.about-container {
-  display: flex;
-  align-items: center;
-  gap: 80px; 
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.about-image-wrapper {
-  flex: 1;
-  position: relative;
-  display: flex;
-  justify-content: center;
+
+.about-hero {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
 }
 
-.about-main-image {
-  width: 100%;
-  max-width: 450px; 
-  height: auto;
-  position: relative;
-  z-index: 2;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-  border-radius: 4px; 
+.about-hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
-.image-border-accent {
-  position: absolute;
-  top: -30px;
-  left: -30px;
-  width: 80%;
-  height: 90%;
-  background-color: #eef4ff; 
-  z-index: 1;
+.about-hero-content span {
+    color: #a3cf62; 
 }
 
-.about-content {
-  flex: 1.2; 
+
+.about-intro-section {
+    padding: 80px 0;
 }
 
-.about-overline {
-  color: #a3cf62; 
-  font-weight: bold;
-  margin-bottom: 10px;
-  letter-spacing: 1.5px;
-  font-size: 0.9rem;
+.nx-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.about-title {
-  color: #0d234d; 
-  font-size: 3rem;
-  line-height: 1.1;
-  margin-bottom: 25px;
-  font-weight: 800;
-}
-
-.about-text p {
-  color: #4a4a4a;
-  line-height: 1.7;
-  margin-bottom: 20px;
-  font-size: 1.05rem;
-}
-
-.read-more-btn {
-  background-color: #ffffff;
-  border: 2px solid #0d234d;
-  color: #0d234d;
-  padding: 14px 35px;
-  font-weight: bold;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 15px;
-}
-
-.read-more-btn:hover {
-  background-color: #0d234d;
-  color: #ffffff;
-  transform: translateY(-2px);
-}
-@media (max-width: 1024px) {
-  .about-container {
-    flex-direction: column;
-    text-align: left;
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
     gap: 50px;
-  }
-  
-  .about-image-wrapper {
-    width: 100%;
-  }
+    align-items: center;
+}
 
-  .image-border-accent {
-    left: 0;
-    top: -20px;
-    width: 90%;
-  }
-  
-  .about-title {
+.intro-text h2 {
+    color: #0d234d;
     font-size: 2.2rem;
-  }
+    margin: 15px 0;
+}
+
+.intro-text p {
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.intro-image img {
+    width: 100%;
+    border: 8px solid #f4f4f4;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+
+.about-stats-bar {
+    background-color: #0d234d;
+    padding: 60px 0;
+    color: white;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    color: #a3cf62;
+}
+
+.stat-card h3 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.stat-card p {
+    margin: 0;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* 4. Values Cards */
+.about-values-section {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.value-card {
+    background: white;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border-top: 5px solid #a3cf62;
+    transition: 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+}
+
+.value-icon-circle {
+    width: 60px;
+    height: 60px;
+    background: #eef4ff;
+    color: #0d234d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    font-size: 1.5rem;
+}
+
+.value-card h3 {
+    margin-bottom: 15px;
+    color: #0d234d;
+}
+
+.value-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+@media (max-width: 900px) {
+    .intro-grid, .stats-grid, .values-grid {
+        grid-template-columns: 1fr;
+    }
 }
