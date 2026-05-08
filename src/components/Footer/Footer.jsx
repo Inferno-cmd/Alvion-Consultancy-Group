@@ -1,46 +1,18 @@
 import React, { useState } from 'react';
 import './Footer.css';
-import LegalModal from './LegalModal';
+import LegalModal from "./LegalModal"; // Ensure this file exists in this folder
 import { FaLinkedinIn, FaWhatsapp, FaTwitter, FaPhoneAlt } from 'react-icons/fa';
 
 const Footer = () => {
   const [modalConfig, setModalConfig] = useState({ isOpen: false, title: '', content: null });
 
-  const openPrivacy = (e) => {
+  const openLegal = (title, type) => (e) => {
     e.preventDefault();
-    setModalConfig({
-      isOpen: true,
-      title: 'Privacy Policy',
-      content: (
-        <div className="legal-text">
-          <p><strong>Effective Date:</strong> May 2026</p>
-          <p>NexaTech Solutions Limited is committed to protecting your data. We collect minimal information via our contact forms to provide better IT services.</p>
-          <ul>
-            <li>We do not share your data with third-party advertisers.</li>
-            <li>All client communications are encrypted and secure.</li>
-            <li>You may request data deletion at any time by contacting our support team.</li>
-          </ul>
-        </div>
-      )
-    });
-  };
-
-  const openTerms = (e) => {
-    e.preventDefault();
-    setModalConfig({
-      isOpen: true,
-      title: 'Terms of Service',
-      content: (
-        <div className="legal-text">
-          <p>By accessing NexaTech Solutions, you agree to the following:</p>
-          <ul>
-            <li><strong>Services:</strong> Hardware procurement and managed services are subject to specific SLA agreements.</li>
-            <li><strong>Payments:</strong> All hardware orders require verification before dispatch.</li>
-            <li><strong>Liability:</strong> NexaTech is not liable for data loss on systems not covered under an active monitoring retainer.</li>
-          </ul>
-        </div>
-      )
-    });
+    const content = type === 'privacy' 
+      ? <p>NexaTech Solutions Limited is committed to protecting your data. We collect minimal information via our contact forms to provide better IT services.</p>
+      : <p>By accessing NexaTech Solutions, you agree to our hardware procurement terms and managed service SLA agreements.</p>;
+    
+    setModalConfig({ isOpen: true, title, content });
   };
 
   return (
@@ -48,7 +20,7 @@ const Footer = () => {
       <div className="nx-container">
         <div className="footer-grid">
           
-          {/* Column 1: Brand (From your previous layout) */}
+          {/* Column 1: Brand Summary */}
           <div className="footer-col brand-col">
             <h2 className="footer-logo">Nexa<span>Tech</span></h2>
             <p className="footer-bio">
@@ -56,8 +28,7 @@ const Footer = () => {
               end-to-end enterprise technology for SMBs.
             </p>
             <div className="contact-phone">
-              <FaPhoneAlt className="phone-icon" /> 
-              <span>+254 740 746 138</span>
+              <FaPhoneAlt className="phone-icon" /> <span>+254 740 746 138</span>
             </div>
             <div className="footer-socials">
               <a href="#"><FaLinkedinIn /></a>
@@ -66,7 +37,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Column 2: Quick Links (From your screenshot) */}
+          {/* Column 2: Contact Us Form (Restored) */}
           <div className="footer-col">
             <h3>Contact Us</h3>
             <div className="footer-mini-form">
@@ -77,7 +48,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Column 3: Feedback (From your screenshot) */}
+          {/* Column 3: Feedback (Restored) */}
           <div className="footer-col">
             <h3>Feedback</h3>
             <div className="feedback-box">
@@ -90,12 +61,12 @@ const Footer = () => {
 
         </div>
 
-        {/* The bottom bar with the Legal Links you wanted */}
+        {/* Bottom Bar with Legal Links */}
         <div className="footer-bottom">
           <p>&copy; 2026 NexaTech Solutions Limited.</p>
           <div className="footer-legal">
-            <a href="#" onClick={openPrivacy}>Privacy Policy</a>
-            <a href="#" onClick={openTerms}>Terms of Service</a>
+            <a href="#" onClick={openLegal('Privacy Policy', 'privacy')}>Privacy Policy</a>
+            <a href="#" onClick={openLegal('Terms of Service', 'terms')}>Terms of Service</a>
           </div>
         </div>
       </div>
