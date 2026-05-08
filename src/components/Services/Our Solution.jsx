@@ -3,31 +3,55 @@ import './Our Solution.css';
 
 const OurSolution = () => {
   const solutions = [
-    { number: 1, title: "CONSULT", description: "Assess client workflow & infrastructure needs" },
-    { number: 2, title: "PROCURE", description: "Source & sell authorised hardware at competitive pricing" },
-    { number: 3, title: "DEPLOY", description: "Install, configure, cable, and migrate data on-site" },
-    { number: 4, title: "MANAGE", description: "Monthly MSP retainer: monitoring, patching & repairs" }
+    { 
+      number: "01", 
+      title: "CONSULT", 
+      description: "We assess your current client workflow and infrastructure needs to design a roadmap that scales with your growth." 
+    },
+    { 
+      number: "02", 
+      title: "PROCURE", 
+      description: "Leveraging our partnerships to source and sell authorized hardware and software at highly competitive enterprise pricing." 
+    },
+    { 
+      number: "03", 
+      title: "DEPLOY", 
+      description: "Our engineers handle the heavy lifting: physical installation, configuration, cabling, and seamless data migration on-site." 
+    },
+    { 
+      number: "04", 
+      title: "MANAGE", 
+      description: "Ongoing peace of mind via monthly MSP retainers, including 24/7 monitoring, security patching, and proactive hardware repairs." 
+    }
   ];
 
   return (
     <section className="solutions-section" id="solutions">
-      <div className="solutions-header">
-        <h4 className="overline">OUR SOLUTION</h4>
-        <h1>One Partner, Total Ownership.</h1>
-        <p className="subtitle">
-          NexaTech operates as a full-cycle Value-Added Reseller - we consult, 
-          procure, deploy and maintain technology for our clients.
-        </p>
-      </div>
+      <div className="solutions-container">
+        <div className="solutions-header">
+          <span className="overline">// OUR SOLUTION</span>
+          <h1 className="solutions-main-title">One Partner, Total Ownership.</h1>
+          <p className="solutions-subtitle">
+            NexaTech operates as a full-cycle Value-Added Reseller. We don't just sell boxes; 
+            we consult, procure, deploy, and maintain the heartbeat of your technology.
+          </p>
+        </div>
 
-      <div className="cards-grid">
-        {solutions.map((item) => (
-          <div key={item.number} className="solution-card">
-            <div className="circle-number">{item.number}</div>
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
-          </div>
-        ))}
+        <div className="cards-grid">
+          {solutions.map((item) => (
+            <div key={item.number} className="solution-card">
+              <div className="card-top">
+                <span className="number-watermark">{item.number}</span>
+                <div className="circle-number">{item.number}</div>
+              </div>
+              <div className="card-content">
+                <h3 className="card-title">{item.title}</h3>
+                <div className="card-accent-line"></div>
+                <p className="card-description">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
