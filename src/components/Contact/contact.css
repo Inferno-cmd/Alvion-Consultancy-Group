@@ -135,6 +135,13 @@
     transition: 0.3s;
 }
 
+/* --- THE FIX: FIXED SIZE MESSAGE BOX --- */
+.form-group textarea {
+    resize: none;          /* Removes the draggable expander handle */
+    min-height: 150px;     /* Set the exact height you want */
+    max-height: 150px;     /* Prevents vertical growth if auto-layout triggers */
+}
+
 .form-group input:focus, .form-group textarea:focus {
     border-color: #a3cf62;
     box-shadow: 0 0 0 3px rgba(163, 207, 98, 0.2);
