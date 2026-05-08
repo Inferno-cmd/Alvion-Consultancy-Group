@@ -1,152 +1,50 @@
 .contact-section {
     padding: 100px 0;
     background-color: #f4f7fa;
-    scroll-margin-top: 80px; 
-}
-
-.nx-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    scroll-margin-top: 80px;
 }
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 80px;
-    align-items: center;
+    grid-template-columns: 1fr 1.1fr; /* Slightly narrowed form side for better balance */
+    gap: 60px;
+    /* This ensures both left and right sides are the exact same height */
+    align-items: stretch; 
 }
 
-/* Left Panel Styling */
-.contact-info-panel .overline {
-    color: #a3cf62;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
-
-.contact-title {
-    color: #0d234d;
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin: 15px 0;
-    line-height: 1.2;
-}
-
-.contact-subtext {
-    color: #555;
-    margin-bottom: 40px;
-    line-height: 1.6;
-}
-
-.contact-item-list {
+/* Left Panel Adjustment */
+.contact-info-panel {
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    /* Removed large margin-bottom since social row is gone */
-    margin-bottom: 0; 
+    justify-content: center; /* Centers text vertically if form is taller */
 }
 
-.contact-item {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.contact-icon-box {
-    width: 50px;
-    height: 50px;
-    background: #0d234d;
-    color: #a3cf62;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    font-size: 1.2rem;
-}
-
-.contact-item h4 {
-    margin: 0;
-    font-size: 0.9rem;
-    color: #888;
-    text-transform: uppercase;
-}
-
-.contact-item p {
-    margin: 0;
-    font-weight: 700;
-    color: #0d234d;
-}
-
-/* Form Panel Styling */
+/* Form Panel Alignment Fix */
 .contact-form-panel {
     background: #ffffff;
-    padding: 50px;
+    /* Reduced vertical padding (40px) to better match the left side's height */
+    padding: 40px 50px; 
     border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(13, 35, 77, 0.1);
+    box-shadow: 0 20px 50px rgba(13, 35, 77, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spreads form elements to fill the height */
 }
 
 .nx-form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px; /* Tighter gap to keep height under control */
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.form-group label {
-    font-weight: 700;
-    color: #0d234d;
-    font-size: 0.9rem;
-}
-
-.form-group input, .form-group select, .form-group textarea {
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-family: inherit;
-    outline: none;
-    transition: 0.3s;
-}
-
-/* FIXED SIZE TEXTAREA */
+/* Ensure the message box height helps with the overall alignment */
 .form-group textarea {
-    resize: none;         /* Disables the user stretch handle */
-    min-height: 150px;    /* Keeps height consistent */
-    max-height: 150px;    /* Ensures no layout shifts */
+    resize: none;
+    min-height: 120px; /* Reduced slightly to prevent the form from becoming too "long" */
+    max-height: 120px;
 }
 
-.form-group input:focus, .form-group textarea:focus {
-    border-color: #a3cf62;
-    box-shadow: 0 0 0 3px rgba(163, 207, 98, 0.2);
-}
-
-.form-submit-btn {
-    background: #0d234d;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-top: 10px;
-}
-
-.form-submit-btn:hover {
-    background: #a3cf62;
-    color: #0d234d;
-    transform: translateY(-3px);
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
+/* Remove the social icons container entirely since you don't need them */
+.social-links-row {
+    display: none;
 }
