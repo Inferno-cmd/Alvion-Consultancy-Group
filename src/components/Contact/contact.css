@@ -1,7 +1,7 @@
 .contact-section {
     padding: 100px 0;
     background-color: #f4f7fa;
-    scroll-margin-top: 80px; /* Crucial for navbar navigation */
+    scroll-margin-top: 80px; 
 }
 
 .nx-container {
@@ -42,7 +42,8 @@
     display: flex;
     flex-direction: column;
     gap: 25px;
-    margin-bottom: 40px;
+    /* Removed large margin-bottom since social row is gone */
+    margin-bottom: 0; 
 }
 
 .contact-item {
@@ -74,30 +75,6 @@
     margin: 0;
     font-weight: 700;
     color: #0d234d;
-}
-
-.social-links-row {
-    display: flex;
-    gap: 15px;
-}
-
-.social-icon {
-    width: 45px;
-    height: 45px;
-    border: 2px solid #0d234d;
-    color: #0d234d;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s;
-    font-size: 1.1rem;
-}
-
-.social-icon:hover {
-    background: #0d234d;
-    color: #a3cf62;
-    transform: translateY(-5px);
 }
 
 /* Form Panel Styling */
@@ -135,11 +112,11 @@
     transition: 0.3s;
 }
 
-/* --- THE FIX: FIXED SIZE MESSAGE BOX --- */
+/* FIXED SIZE TEXTAREA */
 .form-group textarea {
-    resize: none;          /* Removes the draggable expander handle */
-    min-height: 150px;     /* Set the exact height you want */
-    max-height: 150px;     /* Prevents vertical growth if auto-layout triggers */
+    resize: none;         /* Disables the user stretch handle */
+    min-height: 150px;    /* Keeps height consistent */
+    max-height: 150px;    /* Ensures no layout shifts */
 }
 
 .form-group input:focus, .form-group textarea:focus {

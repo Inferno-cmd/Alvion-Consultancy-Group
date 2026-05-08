@@ -42,12 +42,6 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-
-            <div className="social-links-row">
-              <a href="#" className="social-icon"><FaLinkedin /></a>
-              <a href="#" className="social-icon"><FaWhatsapp /></a>
-              <a href="#" className="social-icon"><FaTwitter /></a>
-            </div>
           </div>
 
           {/* Right Side: Form */}
