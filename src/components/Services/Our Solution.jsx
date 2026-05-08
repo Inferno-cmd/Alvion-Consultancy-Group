@@ -41,12 +41,10 @@ const OurSolution = () => {
           {solutions.map((item) => (
             <div key={item.number} className="solution-card">
               <div className="card-top">
-                <span className="number-watermark">{item.number}</span>
                 <div className="circle-number">{item.number}</div>
               </div>
               <div className="card-content">
                 <h3 className="card-title">{item.title}</h3>
-                <div className="card-accent-line"></div>
                 <p className="card-description">{item.description}</p>
               </div>
             </div>

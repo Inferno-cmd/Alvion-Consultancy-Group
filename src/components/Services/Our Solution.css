@@ -1,11 +1,14 @@
 .solutions-section {
-    padding: 160px 20px 100px 20px; 
-    background-color: #0d234d;
+    padding: 100px 20px; 
+    background-color: #0d234d; 
     color: white;
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* Added scroll-margin to ensure navbar doesn't cover title when clicking links */
-    scroll-margin-top: 20px; 
+    scroll-margin-top: 80px;
+}
+
+.solutions-container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .solutions-header {
@@ -13,97 +16,84 @@
     margin: 0 auto 60px auto;
 }
 
-.solutions-header h1 {
-    font-size: 2.5rem;
-    margin-top: 10px;
-    font-weight: 800;
-}
-
 .overline {
-    color: #a3cf62;
+    color: #a3cf62; 
     letter-spacing: 2px;
     font-weight: 700;
     margin-bottom: 10px;
     display: block;
-    text-transform: uppercase;
 }
 
-.solutions-header .subtitle {
+.solutions-main-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.solutions-subtitle {
     font-size: 1.1rem;
     line-height: 1.6;
     opacity: 0.9;
-    margin-top: 15px;
 }
 
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 25px;
 }
 
 .solution-card {
-    background: rgba(255, 255, 255, 0.05); 
-    padding: 40px 30px;
+    background: rgba(255, 255, 255, 0.03); 
+    padding: 50px 30px;
     border-radius: 12px;
     border: 1px solid rgba(163, 207, 98, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: 0.3s ease;
-    cursor: default;
 }
 
 .solution-card:hover {
     transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.07);
     border-color: #a3cf62;
 }
 
+.card-top {
+    margin-bottom: 25px;
+}
+
 .circle-number {
-    width: 60px; /* Slightly larger for better visual balance */
-    height: 60px;
+    width: 65px;
+    height: 65px;
     background: #a3cf62;
     color: #0d234d;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 800;
+    font-weight: 900;
     font-size: 1.4rem;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(163, 207, 98, 0.3);
+    box-shadow: 0 0 20px rgba(163, 207, 98, 0.2);
 }
 
-.solution-card h3 {
+.card-title {
     margin-bottom: 15px;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: #a3cf62;
-    text-transform: uppercase;
+    font-weight: 700;
     letter-spacing: 1px;
 }
 
-.solution-card p {
+.card-description {
     font-size: 0.95rem;
-    line-height: 1.6;
-    opacity: 0.8;
-    color: #ffffff;
+    line-height: 1.7;
+    color: #e0e0e0;
+    opacity: 0.9;
 }
 
-/* Tablet & Mobile Responsiveness */
-@media screen and (max-width: 850px) {
-    .solutions-section {
-        padding-top: 100px;
-    }
-
-    .solutions-header h1 {
-        font-size: 2rem;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .cards-grid {
-        grid-template-columns: 1fr;
+@media screen and (max-width: 768px) {
+    .solutions-main-title {
+        font-size: 2.2rem;
     }
 }
