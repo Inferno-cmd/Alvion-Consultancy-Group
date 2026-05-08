@@ -6,45 +6,69 @@
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1.1fr; /* Slightly narrowed form side for better balance */
+    grid-template-columns: 1fr 1.1fr;
     gap: 60px;
-    /* This ensures both left and right sides are the exact same height */
     align-items: stretch; 
 }
 
-/* Left Panel Adjustment */
 .contact-info-panel {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centers text vertically if form is taller */
+    justify-content: center; 
 }
 
-/* Form Panel Alignment Fix */
+.contact-title {
+    color: #0d234d;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin: 15px 0;
+    line-height: 1.1;
+}
 .contact-form-panel {
     background: #ffffff;
-    /* Reduced vertical padding (40px) to better match the left side's height */
-    padding: 40px 50px; 
+    padding: 45px;
     border-radius: 20px;
     box-shadow: 0 20px 50px rgba(13, 35, 77, 0.08);
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Spreads form elements to fill the height */
 }
 
 .nx-form {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Tighter gap to keep height under control */
+    gap: 18px;
+    height: 100%;
 }
 
-/* Ensure the message box height helps with the overall alignment */
 .form-group textarea {
-    resize: none;
-    min-height: 120px; /* Reduced slightly to prevent the form from becoming too "long" */
-    max-height: 120px;
+    resize: none; 
+    min-height: 130px;
+    max-height: 130px;
+    
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    outline: none;
 }
 
-/* Remove the social icons container entirely since you don't need them */
-.social-links-row {
-    display: none;
+.form-submit-btn {
+    background: #0d234d;
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: auto;
+}
+
+.form-submit-btn:hover {
+    background: #a3cf62;
+    color: #0d234d;
+}
+
+@media (max-width: 992px) {
+    .contact-grid { grid-template-columns: 1fr; }
 }
