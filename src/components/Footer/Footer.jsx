@@ -1,78 +1,64 @@
-import React from 'react';
+import React, { useState } from 'react';
+import LegalModal from './LegalModal'; // Import the modal
 import './Footer.css';
-import { FaLinkedinIn, FaWhatsapp, FaTwitter, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
+  const [modalConfig, setModalConfig] = useState({ isOpen: false, title: '', content: null });
+
+  const openPrivacy = (e) => {
+    e.preventDefault();
+    setModalConfig({
+      isOpen: true,
+      title: 'Privacy Policy',
+      content: (
+        <>
+          <p>Effective Date: {new Date().getFullYear()}</p>
+          <h3>1. Information Collection</h3>
+          <p>We collect information you provide directly to us via our contact forms, including your name, email, and company details.</p>
+          <h3>2. How We Use Information</h3>
+          <p>We use this data to respond to your inquiries, provide IT support, and send service-related updates.</p>
+          <h3>3. Data Security</h3>
+          <p>NexaTech employs enterprise-grade encryption to protect your data. We do not sell your information to third parties.</p>
+        </>
+      )
+    });
+  };
+
+  const openTerms = (e) => {
+    e.preventDefault();
+    setModalConfig({
+      isOpen: true,
+      title: 'Terms of Service',
+      content: (
+        <>
+          <h3>1. Service Agreement</h3>
+          <p>By using NexaTech services, you agree to our terms of hardware procurement and managed service SLAs.</p>
+          <h3>2. Liability</h3>
+          <p>NexaTech is not liable for data loss occurring on client-managed hardware not covered under a monthly maintenance retainer.</p>
+          <h3>3. Payments</h3>
+          <p>Invoices for hardware procurement must be settled within the agreed timeframe before physical deployment occurs.</p>
+        </>
+      )
+    });
+  };
+
   return (
     <footer className="footer-main">
-      <div className="nx-container">
-        <div className="footer-grid">
-          
-          {/* Column 1: Brand & Bio */}
-          <div className="footer-col brand-col">
-            <h2 className="footer-logo">Nexa<span>Tech</span></h2>
-            <p className="footer-bio">
-              NexaTech Solutions Limited is a full-cycle Value-Added Reseller (VAR) 
-              providing end-to-end enterprise technology for growing organizations.
-            </p>
-            <div className="footer-socials">
-              <a href="#"><FaLinkedinIn /></a>
-              <a href="#"><FaWhatsapp /></a>
-              <a href="#"><FaTwitter /></a>
-            </div>
-          </div>
-
-          {/* Column 2: Navigation */}
-          <div className="footer-col">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><a href="#hero">Home</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#solutions">Our Solution</a></li>
-              <li><a href="#testimonial">Testimonials</a></li>
-              <li><a href="#contact">Contact Us</a></li>
-            </ul>
-          </div>
-
-          {/* Column 3: Services */}
-          <div className="footer-col">
-            <h3>Services</h3>
-            <ul>
-              <li><a href="#services">Hardware Sales</a></li>
-              <li><a href="#services">Field Services</a></li>
-              <li><a href="#services">Managed IT Support</a></li>
-              <li><a href="#services">Security Systems</a></li>
-            </ul>
-          </div>
-
-          {/* Column 4: Reach Out (No Form) */}
-          <div className="footer-col">
-            <h3>Direct Contact</h3>
-            <div className="footer-contact-info">
-              <div className="info-row">
-                <FaPhoneAlt className="icon" />
-                <span>+254 740 746 138</span>
-              </div>
-              <div className="info-row">
-                <FaEnvelope className="icon" />
-                <span>info@nexatech.co.ke</span>
-              </div>
-              <p className="footer-hours">Mon - Fri: 8:00 AM - 5:00 PM</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} NexaTech Solutions Limited. All Rights Reserved.</p>
-          <div className="footer-legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-          </div>
+      {/* ... existing footer code ... */}
+      <div className="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} NexaTech Solutions Limited.</p>
+        <div className="footer-legal">
+          <a href="#" onClick={openPrivacy}>Privacy Policy</a>
+          <a href="#" onClick={openTerms}>Terms of Service</a>
         </div>
       </div>
+
+      <LegalModal 
+        isOpen={modalConfig.isOpen} 
+        onClose={() => setModalConfig({ ...modalConfig, isOpen: false })}
+        title={modalConfig.title}
+        content={modalConfig.content}
+      />
     </footer>
   );
 };
-
-export default Footer;
