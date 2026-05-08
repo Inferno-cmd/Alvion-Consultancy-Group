@@ -20,24 +20,34 @@ const Testimonials = () => {
       name: "Dr. Elena Rossi",
       role: "Operations Manager, City Health Clinic",
       feedback: "Reliability is non-negotiable in healthcare. NexaTech's 2-hour SLA gives us peace of mind knowing that our patient data systems are monitored and patched around the clock."
-    },
-     ];
+    }
+  ];
 
   return (
-    <section className="testimonials-section">
+    // Added id="testimonial" to match your navbar link
+    <section className="testimonials-section" id="testimonial">
       <div className="testimonials-header">
         <h4 className="overline">// TESTIMONIALS</h4>
         <h2 className="main-title">Trusted by Industry Leaders</h2>
+        <div className="title-accent"></div>
       </div>
 
       <div className="testimonials-grid">
         {reviews.map((item) => (
           <div key={item.id} className="testimonial-card">
-            <div className="quote-icon">“</div>
+            <div className="card-top-row">
+                <div className="quote-icon">“</div>
+                <div className="stars">★★★★★</div>
+            </div>
             <p className="feedback-text">{item.feedback}</p>
-            <div className="client-info">
-              <h5 className="client-name">{item.name}</h5>
-              <span className="client-role">{item.role}</span>
+            <div className="client-footer">
+              <div className="client-avatar-placeholder">
+                {item.name.charAt(0)}
+              </div>
+              <div className="client-info">
+                <h5 className="client-name">{item.name}</h5>
+                <span className="client-role">{item.role}</span>
+              </div>
             </div>
           </div>
         ))}
