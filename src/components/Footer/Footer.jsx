@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import LegalModal from './LegalModal'; 
+import LegalModal from "../LegalModal/LegalModal"; 
 import './Footer.css';
 
 const Footer = () => {
