@@ -78,7 +78,7 @@ const Navbar = () => {
           <li><a href="#solutions" onClick={closeMenu}>Our Solution</a></li>
           <li><a href="#about" onClick={closeMenu}>About us</a></li>
           <li><a href="#services" onClick={closeMenu}>Products & services</a></li>
-          <li><a href="#testimonials" onClick={closeMenu}>Testimonial</a></li>
+          <li><a href="#testimonial" onClick={closeMenu}>Testimonial</a></li>
           <li className="nx-cta-li">
             <a href="#contact" onClick={closeMenu} className="nx-btn">Contact Us</a>
           </li>
