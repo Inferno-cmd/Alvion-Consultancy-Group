@@ -1,99 +1,130 @@
-.services-section {
-  padding: 80px 10%;
-  background-color: #f9f9f9;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
+.services-offerings-section {
+    padding: 100px 10%;
+    background-color: #fcfcfc;
+    font-family: 'Segoe UI', sans-serif;
+    scroll-margin-top: 80px; 
+}
+
+.services-header {
+    text-align: center;
+    margin-bottom: 60px;
 }
 
 .services-header .overline {
-  color: #0d234d; 
-  letter-spacing: 4px;
-  margin-bottom: 10px;
-  font-weight: bold;
+    color: #a3cf62;
+    font-weight: 700;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 10px;
 }
 
 .services-header .main-title {
-  font-size: 2.5rem;
-  color: #0d234d;
-  margin-bottom: 50px;
-  font-weight: 800;
+    color: #0d234d;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.services-subtitle {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #666;
+    line-height: 1.6;
 }
 
 .pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .pillar-card {
-  background: white;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  overflow: hidden;
-  text-align: left;
-  transition: transform 0.3s ease;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(13, 35, 77, 0.05);
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pillar-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #0d234d; 
 }
 
 .pillar-card:hover {
-  transform: translateY(-10px);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(13, 35, 77, 0.12);
 }
 
 .pillar-header {
-  padding: 20px;
-  color: white;
-  font-weight: bold;
-  letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
-.sales-pillar .pillar-header { background-color: #0c2d92; }
-.field-pillar .pillar-header { background-color: #0c2d92; }
-.tech-pillar .pillar-header { background-color: #0c2d92; }
+.pillar-icon {
+    font-size: 2rem;
+    color: #0d234d;
+}
+
+.pillar-header h3 {
+    color: #0d234d;
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.sales-pillar::before { background-color: #0d234d; }
+.field-pillar::before { background-color: #a3cf62; }
+.tech-pillar::before { background-color: #0d234d; }
+
+.sales-pillar .pillar-icon { color: #0d234d; }
+.field-pillar .pillar-icon { color: #a3cf62; }
+.tech-pillar .pillar-icon { color: #0d234d; }
 
 .pillar-list {
-  list-style: none;
-  padding: 30px 25px;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .pillar-list li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 18px;
-  color: #444;
-  font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    color: #444;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.pillar-list li:last-child {
+    border-bottom: none;
 }
 
 .bullet-square {
-  width: 10px;
-  height: 10px;
-  margin-right: 15px;
-  flex-shrink: 0;
+    width: 8px;
+    height: 8px;
+    background-color: #a3cf62;
+    flex-shrink: 0;
 }
-
-
-.sales-pillar .bullet-square { background-color: #0c2d92; }
-.field-pillar .bullet-square { background-color: #0c2d92; }
-.tech-pillar .bullet-square { background-color: #0c2d92; }
-
-.services-footer {
-  margin-top: 50px;
-  background-color: #0d234d;
-  padding: 15px;
-  border-radius: 4px;
-}
-
-.services-footer p {
-  color: #ffffff;
-  font-style: italic;
-  font-size: 0.9rem;
-  margin: 0;
-}
-
-
 @media (max-width: 768px) {
-  .pillars-grid {
-    grid-template-columns: 1fr;
-  }
+    .services-header .main-title {
+        font-size: 2.2rem;
+    }
+    .services-offerings-section {
+        padding: 60px 5%;
+    }
 }
