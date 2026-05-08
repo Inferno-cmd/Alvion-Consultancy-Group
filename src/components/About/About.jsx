@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.css';
 import { FaCheckCircle, FaProjectDiagram, FaSmileBeam, FaAward } from 'react-icons/fa';
-import aboutLogo from '../../assets/about-icon.png'; // Use a small professional icon/logo
+import aboutLogo from '../../assets/About-tech.png'; // Use a small professional icon/logo
 
 const About = () => {
   return (
