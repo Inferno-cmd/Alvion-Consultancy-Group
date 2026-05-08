@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Footer.css';
-import LegalModal from "./LegalModal"; // Ensure this file exists in this folder
-import { FaLinkedinIn, FaWhatsapp, FaTwitter, FaPhoneAlt } from 'react-icons/fa';
+import LegalModal from "./LegalModal"; 
+import { FaLinkedinIn, FaWhatsapp, FaTwitter, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
   const [modalConfig, setModalConfig] = useState({ isOpen: false, title: '', content: null });
@@ -20,16 +20,13 @@ const Footer = () => {
       <div className="nx-container">
         <div className="footer-grid">
           
-          {/* Column 1: Brand Summary */}
+          {/* Column 1: Brand Identity */}
           <div className="footer-col brand-col">
             <h2 className="footer-logo">Nexa<span>Tech</span></h2>
             <p className="footer-bio">
-              NexaTech Solutions is a full-cycle Value-Added Reseller (VAR) providing 
-              end-to-end enterprise technology for SMBs.
+              Empowering SMBs with enterprise-grade technology. From strategic 
+              consultation to hardware deployment and 24/7 managed support.
             </p>
-            <div className="contact-phone">
-              <FaPhoneAlt className="phone-icon" /> <span>+254 740 746 138</span>
-            </div>
             <div className="footer-socials">
               <a href="#"><FaLinkedinIn /></a>
               <a href="#"><FaWhatsapp /></a>
@@ -37,35 +34,39 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Column 2: Contact Us Form (Restored) */}
+          {/* Column 2: Navigation Map */}
           <div className="footer-col">
-            <h3>Contact Us</h3>
-            <div className="footer-mini-form">
-               <input type="text" placeholder="Name" className="footer-input" />
-               <input type="email" placeholder="Email" className="footer-input" />
-               <textarea placeholder="Message" className="footer-textarea"></textarea>
-               <button className="footer-submit-btn">Submit</button>
-            </div>
+            <h3>Quick Links</h3>
+            <ul className="footer-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#solutions">Our Solution</a></li>
+              <li><a href="#testimonial">Testimonials</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
           </div>
 
-          {/* Column 3: Feedback (Restored) */}
+          {/* Column 3: Services Sitemap */}
           <div className="footer-col">
-            <h3>Feedback</h3>
-            <div className="feedback-box">
-              <p className="feedback-quote">"Exceptional service on our server migration!"</p>
-              <div className="feedback-comment-area">
-                <input type="text" placeholder="Add comment" className="footer-input" />
-              </div>
-            </div>
+            <h3>Our Services</h3>
+            <ul className="footer-links">
+              <li><a href="#services">Hardware Sales</a></li>
+              <li><a href="#services">Managed IT Support</a></li>
+              <li><a href="#services">Security Systems</a></li>
+              <li><a href="#services">Field Services</a></li>
+            </ul>
           </div>
 
         </div>
 
-        {/* Bottom Bar with Legal Links */}
+        {/* Unique Bottom Bar */}
         <div className="footer-bottom">
-          <p>&copy; 2026 NexaTech Solutions Limited.</p>
+          <div className="copyright">
+            &copy; {new Date().getFullYear()} NexaTech Solutions Limited.
+          </div>
           <div className="footer-legal">
             <a href="#" onClick={openLegal('Privacy Policy', 'privacy')}>Privacy Policy</a>
+            <span className="divider">|</span>
             <a href="#" onClick={openLegal('Terms of Service', 'terms')}>Terms of Service</a>
           </div>
         </div>
