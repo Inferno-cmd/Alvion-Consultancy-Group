@@ -8,7 +8,7 @@ import Servicesoffering from './components/Servicesoffering/services'
 import Testimonial from './components/Testimonial/Testimonial'
 import Partners from './components/Partners/Partners'
 import Contact from './components/Contact/Contact'
-import LegalModal from './components/Legal/LegalModal'
+import LegalModal from './components/LegalModal/LegalModal'
 import Footer from './components/Footer/Footer'
 
 const App = () => {
