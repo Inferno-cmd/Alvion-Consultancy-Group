@@ -5,12 +5,29 @@ import { FaLinkedinIn, FaWhatsapp, FaTwitter, FaPhoneAlt, FaEnvelope } from 'rea
 
 const Footer = () => {
   const [modalConfig, setModalConfig] = useState({ isOpen: false, title: '', content: null });
-
-  const openLegal = (title, type) => (e) => {
+const openLegal = (title, type) => (e) => {
     e.preventDefault();
     const content = type === 'privacy' 
-      ? <p>NexaTech Solutions Limited is committed to protecting your data. We collect minimal information via our contact forms to provide better IT services.</p>
-      : <p>By accessing NexaTech Solutions, you agree to our hardware procurement terms and managed service SLA agreements.</p>;
+      ? (
+        <div className="legal-rich-text">
+          <h3>1. Data Collection</h3>
+          <p>NexaTech Solutions Limited collects information that you provide voluntarily through our "Contact Us" forms, including name, company, and email address.</p>
+          <h3>2. Usage of Information</h3>
+          <p>This data is used exclusively to provide technical consultations, hardware quotes, and support services requested by you.</p>
+          <h3>3. Security Protocols</h3>
+          <p>We implement enterprise-level security measures to protect your data from unauthorized access or disclosure.</p>
+        </div>
+      )
+      : (
+        <div className="legal-rich-text">
+          <h3>1. Service Scope</h3>
+          <p>Our technology solutions are provided under specific Service Level Agreements (SLAs). Hardware procurement is subject to manufacturer warranties.</p>
+          <h3>2. Payment Terms</h3>
+          <p>Payments for hardware sales must be processed according to the verified invoice terms before project deployment commences.</p>
+          <h3>3. Limitation of Liability</h3>
+          <p>NexaTech Solutions is not liable for indirect losses or data breaches occurring on systems not actively managed under our MSP retainers.</p>
+        </div>
+      );
     
     setModalConfig({ isOpen: true, title, content });
   };
