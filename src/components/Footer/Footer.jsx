@@ -1,99 +1,76 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Footer.css';
-import { FaPhoneAlt, FaFacebookF, FaTwitter, FaLinkedinIn, FaChevronRight, FaWhatsapp } from 'react-icons/fa';
-import logo from '../../assets/logo.png'; 
+import { FaLinkedinIn, FaWhatsapp, FaTwitter, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [contactStatus, setContactStatus] = useState('');
-  const [comments, setComments] = useState([
-    { id: 1, user: "Client", text: "Exceptional service on our server migration!" }
-  ]);
-  const [newComment, setNewComment] = useState("");
-
-  const handleContactSubmit = (e) => {
-    e.preventDefault();
-    if (!formData.email || !formData.message) return setContactStatus('Required fields missing.');
-    setContactStatus('Sent!');
-    setFormData({ name: '', email: '', message: '' });
-  };
-
-  const addComment = (e) => {
-    e.preventDefault();
-    if (!newComment.trim()) return;
-    setComments([{ id: Date.now(), user: "Client", text: newComment }, ...comments]);
-    setNewComment("");
-  };
-
   return (
-    <footer className="footer-section">
-      <div className="footer-container">
-        <div className="footer-col brand-col">
-          <img src={logo} alt="NexaTech Logo" className="footer-logo" />
-          <p className="footer-desc">
-            NexaTech Solutions is a full-cycle Value-Added Reseller (VAR) providing 
-            end-to-end enterprise technology for SMBs.
-          </p>
-          <div className="phone-row">
-            <FaPhoneAlt className="phone-icon" />
-            <span>+254 740 746 138</span>
-          </div>
-          <div className="footer-socials">
-            <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaTwitter /></a>
-            <a href="#"><FaLinkedinIn /></a>
-          </div>
-        </div>
-        <div className="footer-col">
-          <h3 className="footer-title">Contact Us</h3>
-          <form className="footer-email-form" onSubmit={handleContactSubmit}>
-            <input type="text" placeholder="Name" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} />
-            <input type="email" placeholder="Email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} />
-            <textarea placeholder="Message" rows="3" value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})}></textarea>
-            <button type="submit" className="footer-interactive-btn">Send Message</button>
-            {contactStatus && <p className="status-msg">{contactStatus}</p>}
-          </form>
-        </div>
-
-        <div className="footer-col">
-          <h3 className="footer-title">Feedback</h3>
-          <div className="feedback-wrapper">
-            <div className="comments-display-box">
-              {comments.map(c => (
-                <div key={c.id} className="mini-comment">
-                  <strong>{c.user}:</strong> {c.text}
-                </div>
-              ))}
+    <footer className="footer-main">
+      <div className="nx-container">
+        <div className="footer-grid">
+          
+          {/* Column 1: Brand & Bio */}
+          <div className="footer-col brand-col">
+            <h2 className="footer-logo">Nexa<span>Tech</span></h2>
+            <p className="footer-bio">
+              NexaTech Solutions Limited is a full-cycle Value-Added Reseller (VAR) 
+              providing end-to-end enterprise technology for growing organizations.
+            </p>
+            <div className="footer-socials">
+              <a href="#"><FaLinkedinIn /></a>
+              <a href="#"><FaWhatsapp /></a>
+              <a href="#"><FaTwitter /></a>
             </div>
-            <form className="comment-post-area" onSubmit={addComment}>
-              <input 
-                type="text" 
-                placeholder="Add comment" 
-                value={newComment} 
-                onChange={(e) => setNewComment(e.target.value)} 
-              />
-              <button type="submit" className="footer-interactive-btn post-btn">Post</button>
-            </form>
           </div>
-        </div>
-      </div>
 
-      <div className="footer-bottom">
-        <div className="bottom-content">
-          <p>Copyright © 2026 NexaTech Team. All rights reserved.</p>
-          <div className="bottom-links">
-            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+          {/* Column 2: Navigation */}
+          <div className="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#solutions">Our Solution</a></li>
+              <li><a href="#testimonial">Testimonials</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+          </div>
+
+          {/* Column 3: Services */}
+          <div className="footer-col">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#services">Hardware Sales</a></li>
+              <li><a href="#services">Field Services</a></li>
+              <li><a href="#services">Managed IT Support</a></li>
+              <li><a href="#services">Security Systems</a></li>
+            </ul>
+          </div>
+
+          {/* Column 4: Reach Out (No Form) */}
+          <div className="footer-col">
+            <h3>Direct Contact</h3>
+            <div className="footer-contact-info">
+              <div className="info-row">
+                <FaPhoneAlt className="icon" />
+                <span>+254 740 746 138</span>
+              </div>
+              <div className="info-row">
+                <FaEnvelope className="icon" />
+                <span>info@nexatech.co.ke</span>
+              </div>
+              <p className="footer-hours">Mon - Fri: 8:00 AM - 5:00 PM</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div className="footer-bottom">
+          <p>&copy; {new Date().getFullYear()} NexaTech Solutions Limited. All Rights Reserved.</p>
+          <div className="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
           </div>
         </div>
       </div>
-      <a 
-        href="https://wa.me/254740746138" 
-        className="whatsapp-float" 
-        target="_blank" 
-        rel="noopener noreferrer"
-      >
-        <FaWhatsapp />
-      </a>
     </footer>
   );
 };
