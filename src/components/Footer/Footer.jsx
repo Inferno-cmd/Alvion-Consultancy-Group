@@ -8,8 +8,8 @@ import {
   FaPhoneAlt, 
   FaFacebookF, 
   FaYoutube, 
-  FaXTwitter // Updated to X icon
-} from 'react-icons/fa6'; // Using FontAwesome 6 for X icon
+  FaTimes // Using FaTimes as the 'X' icon for stability
+} from 'react-icons/fa'; 
 
 const Footer = () => {
   const [modalConfig, setModalConfig] = useState({ isOpen: false, title: '', content: null });
@@ -17,18 +17,9 @@ const Footer = () => {
   const openLegal = (title, type) => (e) => {
     e.preventDefault();
     const content = type === 'privacy' 
-      ? (
-        <div className="legal-rich-text">
-          <h3>1. Data Protection</h3>
-          <p>NexaTech Solutions Limited ensures your data is protected with enterprise-grade encryption.</p>
-        </div>
-      )
-      : (
-        <div className="legal-rich-text">
-          <h3>1. Service Terms</h3>
-          <p>Engagement is governed by our standard Managed Service Provider agreements.</p>
-        </div>
-      );
+      ? <p>NexaTech Solutions Limited is committed to protecting your data. We use enterprise-grade encryption for all client communications.</p>
+      : <p>Engagement with our services is governed by our standard Managed Service Provider (MSP) and hardware procurement agreements.</p>;
+    
     setModalConfig({ isOpen: true, title, content });
   };
 
@@ -37,16 +28,15 @@ const Footer = () => {
       <div className="nx-container">
         <div className="footer-sitemap">
           
-          {/* Column 1: Brand & Live Socials */}
+          {/* Column 1: Brand Info */}
           <div className="footer-col brand-info">
             <h2 className="footer-logo">Nexa<span>Tech</span></h2>
-            <p>Empowering SMBs with enterprise-grade technology solutions.</p>
+            <p className="brand-text">Empowering SMBs with enterprise-grade technology solutions.</p>
             <div className="social-links-row">
               <a href="https://facebook.com" target="_blank" rel="noreferrer"><FaFacebookF /></a>
-              <a href="https://x.com" target="_blank" rel="noreferrer"><FaXTwitter /></a>
+              <a href="https://x.com" target="_blank" rel="noreferrer"><FaTimes /></a>
               <a href="https://linkedin.com" target="_blank" rel="noreferrer"><FaLinkedinIn /></a>
               <a href="https://wa.me/254740746138" target="_blank" rel="noreferrer"><FaWhatsapp /></a>
-              <a href="mailto:info@nexatech.co.ke"><FaRegEnvelope /></a>
             </div>
           </div>
 
@@ -70,12 +60,12 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 4: Support */}
+          {/* Column 4: Technical */}
           <div className="footer-col">
-            <h4>Support</h4>
+            <h4>Technical</h4>
             <ul>
-              <li><a href="tel:+254740746138">Call Support</a></li>
-              <li><a href="#status">System Status</a></li>
+              <li><a href="tel:+254740746138">System Status</a></li>
+              <li><a href="mailto:info@nexatech.co.ke">Support Email</a></li>
               <li><a href="#api">API Docs</a></li>
             </ul>
           </div>
