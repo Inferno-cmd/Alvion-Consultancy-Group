@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import LegalModal from "../LegalModal/LegalModal"; 
-import './Footer.css';
+import Footer from "./Footer.css";
 
 const Footer = () => {
   const [modalConfig, setModalConfig] = useState({ isOpen: false, title: '', content: null });
