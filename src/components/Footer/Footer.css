@@ -1,91 +1,37 @@
-.footer-main {
-    background-color: #1e2d3d; /* Matches the deep blue of your reference */
-    color: #ffffff;
-    padding: 80px 0 40px 0;
-    font-family: 'Inter', sans-serif;
-}
-
 .footer-sitemap {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
     gap: 20px;
+    padding-bottom: 40px;
 }
 
-/* Column Borders (The thin white lines between sections) */
+/* Thin vertical dividers between columns as per reference */
 .footer-col:not(:last-child) {
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-right: 20px;
 }
 
-.footer-col h4 {
-    color: #ffffff;
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 25px;
-    text-transform: capitalize;
-}
-
-.footer-col ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-col ul li {
-    margin-bottom: 15px;
-}
-
-.footer-col ul li a {
-    color: #b0c4de;
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: color 0.2s ease;
-}
-
-.footer-col ul li a:hover {
-    color: #ffffff;
-}
-
-/* Brand Section */
-.footer-logo { font-size: 2rem; margin-bottom: 20px; }
-.footer-logo span { color: #a3cf62; }
-.brand-info p {
-    color: #b0c4de;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    max-width: 250px;
-}
-
-/* Social Media Icons */
 .social-links-row {
     display: flex;
     gap: 12px;
+    margin-top: 20px;
 }
 
 .social-links-row a {
-    width: 35px;
-    height: 35px;
-    background: #b0c4de;
-    color: #1e2d3d;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.9rem;
+    text-decoration: none;
     transition: 0.3s;
 }
 
 .social-links-row a:hover {
-    background: #a3cf62;
+    background: #a3cf62; /* Nexa Green */
+    color: #1e2d3d;
     transform: translateY(-3px);
-}
-
-/* Bottom Copyright Bar */
-.footer-bottom-bar {
-    margin-top: 60px;
-    padding-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
-    color: rgba(176, 196, 222, 0.6);
-    font-size: 0.85rem;
 }
