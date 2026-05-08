@@ -67,3 +67,24 @@
 .modal-body p {
     margin-bottom: 15px;
 }
+.modal-header {
+    background: #f8fafc;
+    padding: 20px 30px;
+    border-bottom: 2px solid #a3cf62; /* Brand accent line */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-main-title {
+    font-size: 1.5rem;
+    color: #0d234d;
+    font-weight: 700;
+    margin: 0;
+}
+
+.legal-content h3 {
+    color: #0d234d;
+    margin-top: 20px;
+    font-size: 1.1rem;
+}

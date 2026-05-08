@@ -1,31 +1,28 @@
 import React, { useState } from 'react';
 import './Footer.css';
 import LegalModal from "./LegalModal"; 
-import { FaLinkedinIn, FaWhatsapp, FaTwitter, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+import { FaLinkedinIn, FaWhatsapp, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
   const [modalConfig, setModalConfig] = useState({ isOpen: false, title: '', content: null });
-const openLegal = (title, type) => (e) => {
+
+  const openLegal = (title, type) => (e) => {
     e.preventDefault();
     const content = type === 'privacy' 
       ? (
-        <div className="legal-rich-text">
-          <h3>1. Data Collection</h3>
-          <p>NexaTech Solutions Limited collects information that you provide voluntarily through our "Contact Us" forms, including name, company, and email address.</p>
-          <h3>2. Usage of Information</h3>
-          <p>This data is used exclusively to provide technical consultations, hardware quotes, and support services requested by you.</p>
-          <h3>3. Security Protocols</h3>
-          <p>We implement enterprise-level security measures to protect your data from unauthorized access or disclosure.</p>
+        <div className="legal-content">
+          <h3>1. Purpose of Data Collection</h3>
+          <p>We collect information to provide better IT solutions and maintain communication regarding project updates.</p>
+          <h3>2. Data Protection</h3>
+          <p>Your data is encrypted and stored securely within the NexaTech enterprise environment.</p>
         </div>
       )
       : (
-        <div className="legal-rich-text">
-          <h3>1. Service Scope</h3>
-          <p>Our technology solutions are provided under specific Service Level Agreements (SLAs). Hardware procurement is subject to manufacturer warranties.</p>
-          <h3>2. Payment Terms</h3>
-          <p>Payments for hardware sales must be processed according to the verified invoice terms before project deployment commences.</p>
-          <h3>3. Limitation of Liability</h3>
-          <p>NexaTech Solutions is not liable for indirect losses or data breaches occurring on systems not actively managed under our MSP retainers.</p>
+        <div className="legal-content">
+          <h3>1. Acceptance of Terms</h3>
+          <p>By engaging with NexaTech Solutions, you agree to our standard procurement and service level agreements.</p>
+          <h3>2. Limitation of Liability</h3>
+          <p>NexaTech is not responsible for data loss on client-managed hardware.</p>
         </div>
       );
     
@@ -36,14 +33,10 @@ const openLegal = (title, type) => (e) => {
     <footer className="footer-main">
       <div className="nx-container">
         <div className="footer-grid">
-          
-          {/* Column 1: Brand Identity */}
-          <div className="footer-col brand-col">
+          {/* Brand Info */}
+          <div className="footer-col">
             <h2 className="footer-logo">Nexa<span>Tech</span></h2>
-            <p className="footer-bio">
-              Empowering SMBs with enterprise-grade technology. From strategic 
-              consultation to hardware deployment and 24/7 managed support.
-            </p>
+            <p className="footer-bio">Empowering SMBs with enterprise-grade technology solutions.</p>
             <div className="footer-socials">
               <a href="#"><FaLinkedinIn /></a>
               <a href="#"><FaWhatsapp /></a>
@@ -51,39 +44,36 @@ const openLegal = (title, type) => (e) => {
             </div>
           </div>
 
-          {/* Column 2: Navigation Map */}
+          {/* Quick Links */}
           <div className="footer-col">
             <h3>Quick Links</h3>
             <ul className="footer-links">
               <li><a href="#home">Home</a></li>
               <li><a href="#about">About Us</a></li>
               <li><a href="#solutions">Our Solution</a></li>
-              <li><a href="#testimonial">Testimonials</a></li>
               <li><a href="#contact">Contact Us</a></li>
             </ul>
           </div>
 
-          {/* Column 3: Services Sitemap */}
+          {/* Our Services */}
           <div className="footer-col">
             <h3>Our Services</h3>
             <ul className="footer-links">
               <li><a href="#services">Hardware Sales</a></li>
               <li><a href="#services">Managed IT Support</a></li>
               <li><a href="#services">Security Systems</a></li>
-              <li><a href="#services">Field Services</a></li>
             </ul>
           </div>
-
         </div>
 
-        {/* Unique Bottom Bar */}
+        {/* This is the part that needs professional arrangement */}
         <div className="footer-bottom">
-          <div className="copyright">
+          <div className="footer-copy">
             &copy; {new Date().getFullYear()} NexaTech Solutions Limited.
           </div>
-          <div className="footer-legal">
+          <div className="footer-legal-links">
             <a href="#" onClick={openLegal('Privacy Policy', 'privacy')}>Privacy Policy</a>
-            <span className="divider">|</span>
+            <span className="footer-sep">|</span>
             <a href="#" onClick={openLegal('Terms of Service', 'terms')}>Terms of Service</a>
           </div>
         </div>

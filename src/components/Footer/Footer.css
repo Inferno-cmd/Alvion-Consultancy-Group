@@ -1,85 +1,53 @@
+/* Unique Footer Styling */
 .footer-main {
-    background-color: #081631; /* Even darker blue for a "grounded" feel */
+    background-color: #081631; /* Deepest blue to contrast with Contact Section */
     color: #ffffff;
-    padding: 80px 0 30px 0;
-    font-family: 'Segoe UI', sans-serif;
+    padding: 60px 0 20px 0;
 }
 
 .footer-grid {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 60px;
-    margin-bottom: 60px;
+    gap: 40px;
+    padding-bottom: 40px;
 }
 
-.footer-logo { font-size: 1.8rem; margin-bottom: 20px; }
-.footer-logo span { color: #a3cf62; }
-
-.footer-bio {
-    color: #a0aec0;
-    line-height: 1.8;
-    font-size: 0.95rem;
-    margin-bottom: 25px;
-}
-
-.footer-socials { display: flex; gap: 15px; }
-.footer-socials a {
-    width: 38px; height: 38px;
-    background: rgba(255, 255, 255, 0.05);
-    color: #a3cf62;
-    display: flex; align-items: center; justify-content: center;
-    border-radius: 50%;
-    transition: 0.3s;
-}
-
-.footer-socials a:hover {
-    background: #a3cf62;
-    color: #081631;
-    transform: translateY(-3px);
-}
-
-.footer-col h3 {
-    color: #ffffff;
-    font-size: 1.1rem;
-    margin-bottom: 25px;
-    position: relative;
-}
-
-.footer-col h3::after {
-    content: '';
-    position: absolute;
-    bottom: -8px; left: 0;
-    width: 30px; height: 2px;
-    background: #a3cf62;
-}
-
-.footer-links { list-style: none; padding: 0; }
-.footer-links li { margin-bottom: 12px; }
-.footer-links li a {
-    color: #a0aec0;
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: 0.2s;
-}
-
-.footer-links li a:hover { color: #a3cf62; padding-left: 5px; }
-
-/* The Bottom Bar */
+/* Legal Links Arrangement */
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 30px;
+    padding-top: 25px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Pushes Copy left and Legal right */
     align-items: center;
     font-size: 0.85rem;
-    color: #718096;
+    color: #94a3b8;
 }
 
-.footer-legal a {
-    color: #718096;
+.footer-legal-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-legal-links a {
+    color: #94a3b8;
     text-decoration: none;
-    transition: 0.2s;
+    transition: color 0.3s ease;
 }
 
-.footer-legal a:hover { color: #ffffff; }
-.divider { margin: 0 10px; color: #334155; }
+.footer-legal-links a:hover {
+    color: #a3cf62; /* NexaTech Green */
+}
+
+.footer-sep {
+    color: #334155;
+}
+
+/* Logo and Bio */
+.footer-logo span { color: #a3cf62; }
+.footer-bio { margin: 15px 0; font-size: 0.9rem; color: #94a3b8; }
+
+.footer-links { list-style: none; padding: 0; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a { color: #94a3b8; text-decoration: none; transition: 0.2s; }
+.footer-links a:hover { color: #ffffff; padding-left: 5px; }
