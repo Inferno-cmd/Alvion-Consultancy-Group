@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import LegalModal from "../LegalModal/LegalModal"; 
-import "./Footer.css";
+import './Footer.css';
+import LegalModal from './LegalModal';
+import { FaLinkedinIn, FaWhatsapp, FaTwitter, FaPhoneAlt } from 'react-icons/fa';
 
 const Footer = () => {
   const [modalConfig, setModalConfig] = useState({ isOpen: false, title: '', content: null });
@@ -11,15 +12,15 @@ const Footer = () => {
       isOpen: true,
       title: 'Privacy Policy',
       content: (
-        <>
-          <p>Effective Date: {new Date().getFullYear()}</p>
-          <h3>1. Information Collection</h3>
-          <p>We collect information you provide directly to us via our contact forms, including your name, email, and company details.</p>
-          <h3>2. How We Use Information</h3>
-          <p>We use this data to respond to your inquiries, provide IT support, and send service-related updates.</p>
-          <h3>3. Data Security</h3>
-          <p>NexaTech employs enterprise-grade encryption to protect your data. We do not sell your information to third parties.</p>
-        </>
+        <div className="legal-text">
+          <p><strong>Effective Date:</strong> May 2026</p>
+          <p>NexaTech Solutions Limited is committed to protecting your data. We collect minimal information via our contact forms to provide better IT services.</p>
+          <ul>
+            <li>We do not share your data with third-party advertisers.</li>
+            <li>All client communications are encrypted and secure.</li>
+            <li>You may request data deletion at any time by contacting our support team.</li>
+          </ul>
+        </div>
       )
     });
   };
@@ -30,26 +31,72 @@ const Footer = () => {
       isOpen: true,
       title: 'Terms of Service',
       content: (
-        <>
-          <h3>1. Service Agreement</h3>
-          <p>By using NexaTech services, you agree to our terms of hardware procurement and managed service SLAs.</p>
-          <h3>2. Liability</h3>
-          <p>NexaTech is not liable for data loss occurring on client-managed hardware not covered under a monthly maintenance retainer.</p>
-          <h3>3. Payments</h3>
-          <p>Invoices for hardware procurement must be settled within the agreed timeframe before physical deployment occurs.</p>
-        </>
+        <div className="legal-text">
+          <p>By accessing NexaTech Solutions, you agree to the following:</p>
+          <ul>
+            <li><strong>Services:</strong> Hardware procurement and managed services are subject to specific SLA agreements.</li>
+            <li><strong>Payments:</strong> All hardware orders require verification before dispatch.</li>
+            <li><strong>Liability:</strong> NexaTech is not liable for data loss on systems not covered under an active monitoring retainer.</li>
+          </ul>
+        </div>
       )
     });
   };
 
   return (
     <footer className="footer-main">
-      {/* ... existing footer code ... */}
-      <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} NexaTech Solutions Limited.</p>
-        <div className="footer-legal">
-          <a href="#" onClick={openPrivacy}>Privacy Policy</a>
-          <a href="#" onClick={openTerms}>Terms of Service</a>
+      <div className="nx-container">
+        <div className="footer-grid">
+          
+          {/* Column 1: Brand (From your previous layout) */}
+          <div className="footer-col brand-col">
+            <h2 className="footer-logo">Nexa<span>Tech</span></h2>
+            <p className="footer-bio">
+              NexaTech Solutions is a full-cycle Value-Added Reseller (VAR) providing 
+              end-to-end enterprise technology for SMBs.
+            </p>
+            <div className="contact-phone">
+              <FaPhoneAlt className="phone-icon" /> 
+              <span>+254 740 746 138</span>
+            </div>
+            <div className="footer-socials">
+              <a href="#"><FaLinkedinIn /></a>
+              <a href="#"><FaWhatsapp /></a>
+              <a href="#"><FaTwitter /></a>
+            </div>
+          </div>
+
+          {/* Column 2: Quick Links (From your screenshot) */}
+          <div className="footer-col">
+            <h3>Contact Us</h3>
+            <div className="footer-mini-form">
+               <input type="text" placeholder="Name" className="footer-input" />
+               <input type="email" placeholder="Email" className="footer-input" />
+               <textarea placeholder="Message" className="footer-textarea"></textarea>
+               <button className="footer-submit-btn">Submit</button>
+            </div>
+          </div>
+
+          {/* Column 3: Feedback (From your screenshot) */}
+          <div className="footer-col">
+            <h3>Feedback</h3>
+            <div className="feedback-box">
+              <p className="feedback-quote">"Exceptional service on our server migration!"</p>
+              <div className="feedback-comment-area">
+                <input type="text" placeholder="Add comment" className="footer-input" />
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* The bottom bar with the Legal Links you wanted */}
+        <div className="footer-bottom">
+          <p>&copy; 2026 NexaTech Solutions Limited.</p>
+          <div className="footer-legal">
+            <a href="#" onClick={openPrivacy}>Privacy Policy</a>
+            <a href="#" onClick={openTerms}>Terms of Service</a>
+          </div>
         </div>
       </div>
 
@@ -62,4 +109,5 @@ const Footer = () => {
     </footer>
   );
 };
+
 export default Footer;
