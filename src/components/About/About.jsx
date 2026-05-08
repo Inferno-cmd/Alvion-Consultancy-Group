@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.css';
 import aboutImg from '../../assets/about-tech.png'; 
-import bannerImg from '../../assets/banner.jpg'; 
+import bannerImg from '../../assets/about-banner.png';
 import { FaBullseye, FaEye, FaGem, FaRocket, FaUsers, FaCogs } from 'react-icons/fa';
 
 const About = () => {
