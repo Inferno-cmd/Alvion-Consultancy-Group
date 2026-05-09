@@ -23,8 +23,7 @@ const Contact = () => {
         form.current.reset();
     })
     .catch((error) => {
-        setStatus({ type: 'error', message: 'Failed to send. Check EmailJS dashboard settings.' });
-        console.error("EmailJS Error:", error);
+        setStatus({ type: 'error', message: 'Failed to send. Please check your settings.' });
     })
     .finally(() => {
         setIsSending(false);
