@@ -6,7 +6,7 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 const Contact = () => {
   const form = useRef();
   const [isSending, setIsSending] = useState(false);
-  const [statusMessage, setStatusMessage] = useState("");
+  const [status, setStatus] = useState({ type: '', message: '' });
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -18,15 +18,18 @@ const Contact = () => {
       form.current, 
       'k8kZ9ej721ifskfRx'
     )
-    .then((result) => {
-        setStatusMessage("Success! Your message has been sent.");
-        form.current.reset(); 
-    }, (error) => {
-        setStatusMessage("Oops! Something went wrong. Please try again.");
+    .then(() => {
+        setStatus({ type: 'success', message: 'Success! We will contact you shortly.' });
+        form.current.reset(); // Clears form after success
+    })
+    .catch((error) => {
+        setStatus({ type: 'error', message: 'Something went wrong. Please try again.' });
+        console.error("EmailJS Error:", error);
     })
     .finally(() => {
         setIsSending(false);
-        setTimeout(() => setStatusMessage(""), 5000);
+        // Message disappears after 5 seconds
+        setTimeout(() => setStatus({ type: '', message: '' }), 5000);
     });
   };
 
@@ -34,9 +37,13 @@ const Contact = () => {
     <section className="contact-section" id="contact">
       <div className="nx-container">
         <div className="contact-grid">
+          
+          {/* Left Panel: NexaTech Info */}
           <div className="contact-info-panel">
             <span className="overline">// CONTACT US</span>
             <h2 className="contact-title">Ready to Upgrade Your Technology?</h2>
+            <p className="contact-subtext">Reach out today for a free consultation. Our engineers are ready to help you build a more secure and efficient infrastructure.</p>
+            
             <div className="contact-item-list">
               <div className="contact-item">
                 <div className="contact-icon-box"><FaPhoneAlt /></div>
@@ -45,9 +52,24 @@ const Contact = () => {
                   <p>+254 700 000 000</p>
                 </div>
               </div>
+              <div className="contact-item">
+                <div className="contact-icon-box"><FaEnvelope /></div>
+                <div className="contact-text">
+                  <h4>EMAIL US</h4>
+                  <p>info@nexatech.co.ke</p>
+                </div>
+              </div>
+              <div className="contact-item">
+                <div className="contact-icon-box"><FaMapMarkerAlt /></div>
+                <div className="contact-text">
+                  <h4>VISIT US</h4>
+                  <p>Nairobi, Kenya</p>
+                </div>
+              </div>
             </div>
           </div>
 
+          {/* Right Panel: The Form */}
           <div className="contact-form-panel">
             <form ref={form} onSubmit={sendEmail} className="nx-form">
               <div className="form-group">
@@ -59,11 +81,11 @@ const Contact = () => {
                 <input type="email" name="reply_to" placeholder="john@company.com" required />
               </div>
               <div className="form-group">
-                <label>Service</label>
+                <label>Service Interested In</label>
                 <select name="service_type">
                   <option value="Managed IT">Managed IT Support</option>
                   <option value="Hardware">Hardware Sales</option>
-                  <option value="Security">Security Systems</option>
+                  <option value="Security">Cybersecurity</option>
                 </select>
               </div>
               <div className="form-group">
@@ -75,10 +97,8 @@ const Contact = () => {
                 {isSending ? "Sending..." : "Send Message"}
               </button>
 
-              {statusMessage && (
-                <p className={`status-text ${statusMessage.includes('Success') ? 'success' : 'error'}`}>
-                  {statusMessage}
-                </p>
+              {status.message && (
+                <p className={`status-msg ${status.type}`}>{status.message}</p>
               )}
             </form>
           </div>
