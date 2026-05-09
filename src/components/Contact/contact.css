@@ -150,3 +150,33 @@
     .contact-grid { grid-template-columns: 1fr; gap: 50px; }
     .contact-title { font-size: 2.2rem; }
 }
+.status-text {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    animation: fadeIn 0.4s ease;
+}
+
+.status-text.success {
+    background: rgba(163, 207, 98, 0.15);
+    color: #4a6d1a;
+}
+
+.status-text.error {
+    background: rgba(255, 0, 0, 0.05);
+    color: #d00000;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-submit-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
