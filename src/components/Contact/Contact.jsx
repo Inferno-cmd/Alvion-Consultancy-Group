@@ -14,7 +14,7 @@ const Contact = () => {
 
     emailjs.sendForm(
       'service_k0a5705', 
-      'template_liygprs', 
+      'template_xk008fm', 
       form.current, 
       'k8kZ9ej721ifskfRx'
     )
@@ -23,7 +23,8 @@ const Contact = () => {
         form.current.reset();
     })
     .catch((error) => {
-        setStatus({ type: 'error', message: 'Failed to send. Check EmailJS settings.' });
+        setStatus({ type: 'error', message: 'Failed to send. Please check your dashboard settings.' });
+        console.error("EmailJS Error:", error);
     })
     .finally(() => {
         setIsSending(false);
@@ -82,7 +83,7 @@ const Contact = () => {
               <div className="form-group">
                 <label>Service Interested In</label>
                 <select name="service_type">
-                  <option value="Managed IT">Managed IT Support</option>
+                  <option value="Managed IT Support">Managed IT Support</option>
                   <option value="Hardware Sales">Hardware Sales</option>
                   <option value="Security Systems">Security Systems</option>
                 </select>
