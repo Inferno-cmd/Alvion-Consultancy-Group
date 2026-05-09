@@ -14,21 +14,19 @@ const Contact = () => {
 
     emailjs.sendForm(
       'service_k0a5705', 
-      'template_xk008fm', 
+      'template_liygprs', 
       form.current, 
       'k8kZ9ej721ifskfRx'
     )
     .then(() => {
-        setStatus({ type: 'success', message: 'Success! We will contact you shortly.' });
-        form.current.reset(); // Clears form after success
+        setStatus({ type: 'success', message: 'Success! Your message was sent.' });
+        form.current.reset();
     })
     .catch((error) => {
-        setStatus({ type: 'error', message: 'Something went wrong. Please try again.' });
-        console.error("EmailJS Error:", error);
+        setStatus({ type: 'error', message: 'Failed to send. Check EmailJS settings.' });
     })
     .finally(() => {
         setIsSending(false);
-        // Message disappears after 5 seconds
         setTimeout(() => setStatus({ type: '', message: '' }), 5000);
     });
   };
@@ -38,11 +36,13 @@ const Contact = () => {
       <div className="nx-container">
         <div className="contact-grid">
           
-          {/* Left Panel: NexaTech Info */}
           <div className="contact-info-panel">
             <span className="overline">// CONTACT US</span>
             <h2 className="contact-title">Ready to Upgrade Your Technology?</h2>
-            <p className="contact-subtext">Reach out today for a free consultation. Our engineers are ready to help you build a more secure and efficient infrastructure.</p>
+            <p className="contact-subtext">
+              Reach out today for a free consultation. Our engineers are ready to 
+              help you build a more secure and efficient infrastructure.
+            </p>
             
             <div className="contact-item-list">
               <div className="contact-item">
@@ -69,7 +69,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Right Panel: The Form */}
           <div className="contact-form-panel">
             <form ref={form} onSubmit={sendEmail} className="nx-form">
               <div className="form-group">
@@ -84,8 +83,8 @@ const Contact = () => {
                 <label>Service Interested In</label>
                 <select name="service_type">
                   <option value="Managed IT">Managed IT Support</option>
-                  <option value="Hardware">Hardware Sales</option>
-                  <option value="Security">Cybersecurity</option>
+                  <option value="Hardware Sales">Hardware Sales</option>
+                  <option value="Security Systems">Security Systems</option>
                 </select>
               </div>
               <div className="form-group">

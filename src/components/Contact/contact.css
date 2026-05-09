@@ -3,12 +3,45 @@
     background-color: #f4f7fa;
 }
 
+.nx-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1.1fr;
     gap: 80px;
-    align-items: stretch; 
+    align-items: stretch;
 }
+
+.contact-info-panel .overline {
+    color: #a3cf62;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.contact-title {
+    color: #0d234d;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin: 15px 0;
+    line-height: 1.1;
+}
+
+.contact-subtext {
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.contact-item {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
 .contact-icon-box {
     width: 50px;
     height: 50px;
@@ -19,6 +52,7 @@
     justify-content: center;
     border-radius: 12px;
 }
+
 .contact-form-panel {
     background: #ffffff;
     padding: 40px 50px;
@@ -32,15 +66,31 @@
     gap: 20px;
 }
 
-.form-group input, .form-group select, .form-group textarea {
-    width: 100%;
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 700;
+    color: #0d234d;
+    font-size: 0.9rem;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
     padding: 12px 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
+    font-family: inherit;
     outline: none;
+    background-color: #fdfdfd;
 }
+
 .form-group textarea {
-    resize: none; 
+    resize: none;
     min-height: 130px;
     max-height: 130px;
 }
@@ -59,11 +109,36 @@
 .form-submit-btn:hover:not(:disabled) {
     background: #a3cf62;
     color: #0d234d;
+    transform: translateY(-2px);
 }
+
+.form-submit-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
 .status-msg {
     margin-top: 15px;
     text-align: center;
     font-weight: 600;
 }
-.status-msg.success { color: #a3cf62; }
-.status-msg.error { color: #ff4d4d; }
+
+.status-msg.success { 
+    color: #4a6d1a; 
+    background: #e8f5e9; 
+    padding: 10px; 
+    border-radius: 8px; 
+}
+
+.status-msg.error { 
+    color: #d32f2f; 
+    background: #ffebee; 
+    padding: 10px; 
+    border-radius: 8px; 
+}
+
+@media (max-width: 992px) {
+    .contact-grid { 
+        grid-template-columns: 1fr; 
+    }
+}
