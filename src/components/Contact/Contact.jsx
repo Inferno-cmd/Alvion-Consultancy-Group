@@ -14,7 +14,7 @@ const Contact = () => {
 
     emailjs.sendForm(
       'service_k0a5705', 
-      'template_liygprs', 
+      'template_xk008fm', 
       form.current, 
       'k8kZ9ej721ifskfRx'
     )
@@ -23,7 +23,7 @@ const Contact = () => {
         form.current.reset();
     })
     .catch((error) => {
-        setStatus({ type: 'error', message: 'Failed to send. Please check your dashboard settings.' });
+        setStatus({ type: 'error', message: 'Failed to send. Check EmailJS dashboard settings.' });
         console.error("EmailJS Error:", error);
     })
     .finally(() => {
