@@ -1,6 +1,6 @@
 .testimonials-section {
     padding: 120px 10%;
-    background-color: #0d234d; /* NexaTech Dark Blue */
+    background-color: #0d234d; 
     color: #ffffff;
     text-align: center;
     scroll-margin-top: 80px;
@@ -14,7 +14,7 @@
 }
 
 .testimonials-header .overline {
-    color: #a3cf62; /* NexaTech Lime Green */
+    color: #a3cf62; 
     font-weight: 700;
     letter-spacing: 2px;
     margin-bottom: 10px;
@@ -32,8 +32,6 @@
     background: #a3cf62;
     border-radius: 2px;
 }
-
-/* Grid Logic */
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -41,8 +39,6 @@
     max-width: 1200px;
     margin: 0 auto;
 }
-
-/* Card Styling */
 .testimonial-card {
     background: rgba(255, 255, 255, 0.05);
     padding: 40px;
@@ -89,8 +85,6 @@
     font-style: italic;
     margin-bottom: 30px;
 }
-
-/* Client Info Footer */
 .client-footer {
     display: flex;
     align-items: center;

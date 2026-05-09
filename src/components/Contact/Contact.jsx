@@ -1,5 +1,5 @@
 import React from 'react';
-import './contact.css';
+import './Contact.css';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Contact = () => {
@@ -7,7 +7,7 @@ const Contact = () => {
     <section className="contact-section" id="contact">
       <div className="nx-container">
         <div className="contact-grid">
-            <div className="contact-info-panel">
+          <div className="contact-info-panel">
             <span className="overline">// CONTACT US</span>
             <h2 className="contact-title">Ready to Upgrade Your Technology?</h2>
             <p className="contact-subtext">
@@ -18,21 +18,21 @@ const Contact = () => {
             <div className="contact-item-list">
               <div className="contact-item">
                 <div className="contact-icon-box"><FaPhoneAlt /></div>
-                <div>
+                <div className="contact-text">
                   <h4>CALL US</h4>
                   <p>+254 700 000 000</p>
                 </div>
               </div>
               <div className="contact-item">
                 <div className="contact-icon-box"><FaEnvelope /></div>
-                <div>
+                <div className="contact-text">
                   <h4>EMAIL US</h4>
                   <p>info@nexatech.co.ke</p>
                 </div>
               </div>
               <div className="contact-item">
                 <div className="contact-icon-box"><FaMapMarkerAlt /></div>
-                <div>
+                <div className="contact-text">
                   <h4>VISIT US</h4>
                   <p>Nairobi, Kenya</p>
                 </div>
@@ -70,4 +70,5 @@ const Contact = () => {
     </section>
   );
 };
+
 export default Contact;

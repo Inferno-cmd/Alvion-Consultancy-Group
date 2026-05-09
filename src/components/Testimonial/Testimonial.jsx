@@ -24,7 +24,6 @@ const Testimonials = () => {
   ];
 
   return (
-    // Added id="testimonial" to match your navbar link
     <section className="testimonials-section" id="testimonial">
       <div className="testimonials-header">
         <h4 className="overline">// TESTIMONIALS</h4>

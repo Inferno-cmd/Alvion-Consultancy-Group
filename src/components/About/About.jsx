@@ -6,13 +6,9 @@ const About = () => {
   return (
     <section className="about-section" id="about">
       <div className="about-wrapper">
-        
-        {/* Vertical Side Title from your sketch */}
         <div className="vertical-title-container">
           <h1 className="vertical-text">ABOUT US</h1>
         </div>
-
-        {/* Main Content Column */}
         <div className="about-content-column">
           <div className="text-header">
             <span className="overline">WHO WE ARE</span>
@@ -22,8 +18,6 @@ const About = () => {
               bridging the gap between complex enterprise technology and growing businesses.
             </p>
           </div>
-
-          {/* Three Feature Cards Stacked vertically as per sketch boxes */}
           <div className="feature-cards-stack">
             <div className="feature-mini-card">
               <FaCheckCircle className="mini-icon" />

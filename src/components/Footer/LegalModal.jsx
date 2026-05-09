@@ -7,7 +7,6 @@ const LegalModal = ({ isOpen, onClose, title, content }) => {
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        {/* Modal Header */}
         <div className="modal-header">
           <div className="header-title-group">
             <span className="modal-subtitle">// LEGAL DOCUMENTATION</span>
@@ -15,8 +14,6 @@ const LegalModal = ({ isOpen, onClose, title, content }) => {
           </div>
           <button className="modal-close-btn" onClick={onClose}>&times;</button>
         </div>
-
-        {/* Modal Body */}
         <div className="modal-body">
           <div className="legal-meta">
             <span><strong>Effective Date:</strong> May 2026</span>
@@ -26,8 +23,6 @@ const LegalModal = ({ isOpen, onClose, title, content }) => {
             {content}
           </div>
         </div>
-
-        {/* Modal Footer */}
         <div className="modal-footer">
           <button className="modal-action-btn" onClick={onClose}>I Understand</button>
         </div>

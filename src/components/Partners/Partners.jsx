@@ -12,8 +12,7 @@ import apcLogo from '../../assets/APC logo.png';
 import kyoceraLogo from '../../assets/Kyocera logo.png';
 
 const Partners = () => {
-  // 2. Map the imported variables to your array
-  const partners = [
+    const partners = [
     { name: "HP", img: hpLogo },
     { name: "Lenovo", img: lenovoLogo },
     { name: "Dell", img: dellLogo },
@@ -40,7 +39,6 @@ const Partners = () => {
         <div className="logo-grid">
           {partners.map((partner, index) => (
             <div key={index} className="logo-item">
-              {/* 3. The src now uses the imported variable */}
               <img 
                 src={partner.img} 
                 alt={`${partner.name} logo`} 

@@ -8,7 +8,7 @@ import {
   FaPhoneAlt, 
   FaFacebookF, 
   FaYoutube, 
-  FaTimes // Using FaTimes as the 'X' icon for stability
+  FaTimes 
 } from 'react-icons/fa'; 
 
 const Footer = () => {
@@ -27,8 +27,6 @@ const Footer = () => {
     <footer className="footer-main">
       <div className="nx-container">
         <div className="footer-sitemap">
-          
-          {/* Column 1: Brand Info */}
           <div className="footer-col brand-info">
             <h2 className="footer-logo">Nexa<span>Tech</span></h2>
             <p className="brand-text">Empowering SMBs with enterprise-grade technology solutions.</p>
@@ -39,8 +37,6 @@ const Footer = () => {
               <a href="https://wa.me/254740746138" target="_blank" rel="noreferrer"><FaWhatsapp /></a>
             </div>
           </div>
-
-          {/* Column 2: Company */}
           <div className="footer-col">
             <h4>Company</h4>
             <ul>
@@ -49,8 +45,6 @@ const Footer = () => {
               <li><a href="#contact">Contact Us</a></li>
             </ul>
           </div>
-
-          {/* Column 3: Legal */}
           <div className="footer-col">
             <h4>Legal</h4>
             <ul>
@@ -59,8 +53,6 @@ const Footer = () => {
               <li><a href="#security">Security</a></li>
             </ul>
           </div>
-
-          {/* Column 4: Technical */}
           <div className="footer-col">
             <h4>Technical</h4>
             <ul>
@@ -69,8 +61,6 @@ const Footer = () => {
               <li><a href="#api">API Docs</a></li>
             </ul>
           </div>
-
-          {/* Column 5: Solutions */}
           <div className="footer-col">
             <h4>Solutions</h4>
             <ul>

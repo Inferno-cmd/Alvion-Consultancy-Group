@@ -43,8 +43,7 @@ const ServiceOfferings = () => {
   ];
 
   return (
-    // Added id="services" for Navbar navigation
-    <section className="services-offerings-section" id="services">
+        <section className="services-offerings-section" id="services">
       <div className="services-header">
         <span className="overline">// PRODUCTS & SERVICES</span>
         <h2 className="main-title">Pillars of Delivery</h2>
