@@ -83,7 +83,7 @@ footer {
   }
 }
 
-/* Mobile Phones and Small Tablets (Max Width: 768px) */
+/* Mobile Phones and Small Tablets*/
 @media (max-width: 768px) {
   /* Reduce padding for better readability on small screens */
   .container {
@@ -111,7 +111,7 @@ footer {
     gap: 20px;
   }
 
-  /* CRITICAL FIX: Force Flexbox Layouts to stack vertically */
+  /*Force Flexbox Layouts to stack vertically */
   .flex,
   .row {
     flex-direction: column !important;
