@@ -88,3 +88,10 @@ footer {
     font-size: 1rem;
   }
 }
+
+@media (max-width: 480px) {
+  .hero-btn {
+    width: 100%; /* Full width button on very small screens */
+    justify-content: center;
+  }
+}
