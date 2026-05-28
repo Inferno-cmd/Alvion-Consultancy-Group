@@ -74,3 +74,17 @@ footer {
   padding: 20px; /* Reduce padding on mobile if needed */
   box-sizing: border-box; /* Ensures padding doesn't add to width */
 }
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: clamp(2rem, 8vw, 3rem); /* Slightly smaller range for mobile */
+  }
+
+  .hero-content h2 {
+    font-size: 1.25rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
