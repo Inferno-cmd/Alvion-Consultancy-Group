@@ -1,35 +1,11 @@
-import React, { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
-import './contact.css';
+import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
+import './contact.css'; // Verified lowercase file import
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Contact = () => {
-  const form = useRef();
-  const [isSending, setIsSending] = useState(false);
-  const [status, setStatus] = useState({ type: '', message: '' });
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-    setIsSending(true);
-
-    emailjs.sendForm(
-      'service_k0a5705', 
-      'template_xk008fm', 
-      form.current, 
-      'k8kZ9ej721ifskfRx'
-    )
-    .then(() => {
-        setStatus({ type: 'success', message: 'Success! Your message was sent.' });
-        form.current.reset();
-    })
-    .catch((error) => {
-        setStatus({ type: 'error', message: 'Failed to send. Please check your settings.' });
-    })
-    .finally(() => {
-        setIsSending(false);
-        setTimeout(() => setStatus({ type: '', message: '' }), 5000);
-    });
-  };
+  // Connected directly to your working Formspree Form ID
+  const [state, handleSubmit] = useForm("xjgdwovg");
 
   return (
     <section className="contact-section" id="contact">
@@ -70,34 +46,40 @@ const Contact = () => {
           </div>
 
           <div className="contact-form-panel">
-            <form ref={form} onSubmit={sendEmail} className="nx-form">
+            <form onSubmit={handleSubmit} className="nx-form">
               <div className="form-group">
-                <label>Full Name</label>
-                <input type="text" name="from_name" placeholder="John Doe" required />
+                <label htmlFor="name">Full Name</label>
+                <input id="name" type="text" name="name" placeholder="John Doe" required />
+                <ValidationError prefix="Name" field="name" errors={state.errors} />
               </div>
+
               <div className="form-group">
-                <label>Email Address</label>
-                <input type="email" name="reply_to" placeholder="john@company.com" required />
+                <label htmlFor="email">Email Address</label>
+                <input id="email" type="email" name="email" placeholder="john@company.com" required />
+                <ValidationError prefix="Email" field="email" errors={state.errors} />
               </div>
+
               <div className="form-group">
-                <label>Service Interested In</label>
-                <select name="service_type">
+                <label htmlFor="service">Service Interested In</label>
+                <select id="service" name="service">
                   <option value="Managed IT Support">Managed IT Support</option>
                   <option value="Hardware Sales">Hardware Sales</option>
                   <option value="Security Systems">Security Systems</option>
                 </select>
               </div>
+
               <div className="form-group">
-                <label>Message</label>
-                <textarea name="message" placeholder="Tell us about your project..." required></textarea>
+                <label htmlFor="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+                <ValidationError prefix="Message" field="message" errors={state.errors} />
               </div>
 
-              <button type="submit" className="form-submit-btn" disabled={isSending}>
-                {isSending ? "Sending..." : "Send Message"}
+              <button type="submit" className="form-submit-btn" disabled={state.submitting}>
+                {state.submitting ? "Sending..." : "Send Message"}
               </button>
 
-              {status.message && (
-                <p className={`status-msg ${status.type}`}>{status.message}</p>
+              {state.succeeded && (
+                <p className="status-msg success">Success! Your message was sent safely.</p>
               )}
             </form>
           </div>
