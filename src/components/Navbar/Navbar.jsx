@@ -58,10 +58,14 @@ const Navbar = () => {
           <img src={logo} alt="NexaTech" className="nx-logo" />
         </div>
 
+        {/* Backdrop overlay to close menu when clicking outside on mobile view */}
+        {isMenuOpen && <div className="nx-nav-overlay" onClick={closeMenu}></div>}
+
         <ul className={`nx-nav-links ${isMenuOpen ? 'nx-open' : ''}`}>
           <li className="nx-close-menu" onClick={closeMenu}>
             <FaTimes />
           </li>
+          
           <li className="nx-search-item">
             <div className="nx-search-box">
               <input 
@@ -74,16 +78,19 @@ const Navbar = () => {
               <FaSearch className="nx-search-icon" />
             </div>
           </li>
+          
           <li><a href="#hero" onClick={closeMenu}>Home</a></li>
           <li><a href="#solutions" onClick={closeMenu}>Our Solution</a></li>
           <li><a href="#about" onClick={closeMenu}>About us</a></li>
           <li><a href="#services" onClick={closeMenu}>Products & services</a></li>
           <li><a href="#testimonial" onClick={closeMenu}>Testimonial</a></li>
+          
           <li className="nx-cta-li">
             <a href="#contact" onClick={closeMenu} className="nx-btn">Contact Us</a>
           </li>
         </ul>
-         <div className="nx-menu-toggle" onClick={toggleMenu}>
+
+        <div className="nx-menu-toggle" onClick={toggleMenu}>
           <FaBars />
         </div>
       </div>

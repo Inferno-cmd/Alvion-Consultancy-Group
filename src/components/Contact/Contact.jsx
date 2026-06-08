@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react'; // 1. Imported useEffect
 import { useForm, ValidationError } from '@formspree/react';
 import './contact.css'; 
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Contact = () => {
-  // Uses your exact form hash
   const [state, handleSubmit] = useForm("xjgdwovg");
+
+  // 2. Automatically monitors submission success to clear and redirect
+  useEffect(() => {
+    if (state.succeeded) {
+      const timer = setTimeout(() => {
+        // Forces a clean reload back to your landing domain home route
+        window.location.href = window.location.origin; 
+      }, 1500); // 1.5 second delay so they read the success message
+
+      return () => clearTimeout(timer);
+    }
+  }, [state.succeeded]);
 
   return (
     <section className="contact-section" id="contact">

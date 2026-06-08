@@ -1,3 +1,4 @@
+/* --- Core Navbar & Container Layouts --- */
 .nx-navbar {
   position: fixed;
   top: 0;
@@ -7,6 +8,8 @@
   transition: all 0.4s ease;
   padding: 20px 0;
   background: transparent; 
+  display: flex;
+  align-items: center;
 }
 
 .nx-navbar.nx-sticky {
@@ -24,16 +27,25 @@
   align-items: center;
 }
 
+.nx-logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
 .nx-logo {
   height: 45px;
   width: auto;
+  object-fit: contain;
 }
 
+/* --- Navigation Desktop Link Elements --- */
 .nx-nav-links {
   display: flex;
   align-items: center;
   list-style: none;
   gap: 25px;
+  margin: 0;
+  padding: 0;
 }
 
 .nx-nav-links a {
@@ -48,47 +60,23 @@
   color: #a3cf62; 
 }
 
+/* Call to Action Button styling adjustments */
 .nx-btn {
   background: #a3cf62;
-  color: #ffffff !important;
+  color: #0d234d !important; /* Fixed text color for better contrast/readability */
   padding: 10px 22px;
-  border-radius: 5px;
+  border-radius: 25px;
   font-weight: 600 !important;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
-.nx-menu-toggle {
-  display: none; 
-  color: #ffffff;
-  font-size: 26px;
-  cursor: pointer;
+.nx-btn:hover {
+  background: #ffffff;
+  transform: translateY(-1px);
 }
-@media screen and (max-width: 900px) {
-  .nx-menu-toggle {
-    display: block; 
-  }
 
-  .nx-nav-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px; 
-    height: 100vh;
-    background: #0d234d;
-    flex-direction: column;
-    justify-content: center;
-    gap: 35px;
-    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: -10px 0 20px rgba(0,0,0,0.4);
-  }
-
-    .nx-nav-links.nx-open {
-    right: 0; 
-  }
-
-  .nx-nav-links a {
-    font-size: 19px;
-  }
-}
+/* --- Search Engine Inline UI Components --- */
 .nx-search-item {
   margin-left: 10px;
 }
@@ -133,15 +121,100 @@
   cursor: pointer;
 }
 
+/* Base Visibility Fallbacks */
+.nx-menu-toggle,
+.nx-close-menu,
+.nx-nav-overlay {
+  display: none;
+}
+
+/* --- Consolidated Mobile View Styles (Max Width 900px) --- */
 @media screen and (max-width: 900px) {
-  .nx-nav-links {
-    padding: 20px;
+  .nx-menu-toggle {
+    display: block;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
   }
 
+  .nx-menu-toggle:hover {
+    color: #a3cf62;
+  }
+
+  /* Dark Blurred Ambient Screen Overlay */
+  .nx-nav-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 9998;
+  }
+
+  /* Slide Out Context Layout Container */
+  .nx-nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: #0d234d; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: flex-start;
+    padding: 90px 20px 40px 20px; 
+    gap: 24px;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 10000;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.4);
+    overflow-y: auto;
+  }
+
+  .nx-nav-links.nx-open {
+    right: 0; /* Brings the side drawer menu gracefully into view */
+  }
+
+  .nx-close-menu {
+    display: block;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 30px;
+    color: #a3cf62; 
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .nx-close-menu:hover {
+    transform: rotate(90deg);
+  }
+
+  /* List Items Vertical Restructuring */
+  .nx-nav-links li {
+    width: 100%;
+    text-align: left;
+    padding-left: 20px; 
+  }
+
+  .nx-nav-links a {
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    padding: 4px 0;
+  }
+
+  /* Embedded Responsive Mobile Search Box Layout */
   .nx-search-item {
-    order: -1; 
-    width: 80%;
-    margin: 0 auto;
+    order: -1; /* Forces Search component to sit at the absolute top of mobile link stacks */
+    width: 100%;
+    margin: 0 0 15px 0;
+    padding-left: 20px !important;
+    padding-right: 20px;
   }
 
   .nx-search-box {
@@ -153,63 +226,16 @@
     width: 100% !important; 
     font-size: 16px;
   }
-}
-.nx-close-menu {
-  display: none; 
-}
 
-@media screen and (max-width: 900px) {
-  .nx-menu-toggle {
-    display: block;
-    font-size: 28px;
-    color: white;
-    cursor: pointer;
-  }
-
-  .nx-close-menu {
-    display: block;
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    font-size: 30px;
-    color: #a3cf62; 
-    cursor: pointer;
-  }
-
-  .nx-nav-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 300px;
-    height: 100vh;
-    background: #0d234d; 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; 
-    padding-top: 80px; 
-    
-    gap: 20px;
-    transition: 0.5s ease-in-out;
-    z-index: 10000;
-  }
-
-  .nx-nav-links.nx-open {
-    right: 0;
-  }
-
-  .nx-nav-links li {
-    width: 100%;
-    text-align: left;
-    padding-left: 40px; 
-  }
-
-  .nx-search-item {
-    margin-bottom: 20px;
-    padding-left: 20px !important;
+  .nx-cta-li {
     padding-right: 20px;
+    margin-top: 10px;
   }
 
-  .nx-search-box {
+  .nx-btn {
     width: 100%;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
   }
 }
