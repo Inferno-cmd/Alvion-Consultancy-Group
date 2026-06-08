@@ -1,7 +1,6 @@
-/* --- Testimonial Base Shell Structure (Inverted for Dark Blue) --- */
 .nx-testimonial-section {
   padding: 100px 0;
-  background-color: #0d234d; /* Switched to deep corporate blue background */
+  background-color: #0d234d; 
   width: 100%;
   display: block;
 }
@@ -15,7 +14,6 @@
   box-sizing: border-box;
 }
 
-/* Header Alignment row */
 .nx-testimonial-header-row {
   display: flex;
   justify-content: space-between;
@@ -25,7 +23,7 @@
 }
 
 .nx-testimonial-overline {
-  color: #a3cf62; /* Vibrant accent green remains */
+  color: #a3cf62; 
   font-weight: 700;
   letter-spacing: 2px;
   font-size: 0.85rem;
@@ -34,13 +32,12 @@
 }
 
 .nx-testimonial-title {
-  color: #ffffff; /* Changed to white for dark background visibility */
+  color: #ffffff; 
   font-size: 2.5rem;
   font-weight: 800;
   margin: 0;
 }
 
-/* Admin Indicator Badge next to title */
 .nx-admin-badge {
   font-size: 0.9rem;
   background-color: #ef4444;
@@ -53,18 +50,17 @@
   letter-spacing: 0.5px;
 }
 
-/* Slider Controls Button Mechanics */
 .nx-slider-controls {
   display: flex;
   gap: 15px;
   align-items: center;
 }
 
-/* COMPACT "WRITE A REVIEW" TRIGGER BUTTON */
+
 .nx-trigger-review-btn {
   background-color: transparent;
-  color: #ffffff; /* Flipped to white text */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Soft white border */
+  color: #ffffff; 
+  border: 1px solid rgba(255, 255, 255, 0.3); 
   padding: 12px 22px;
   border-radius: 30px;
   font-weight: 700;
@@ -79,7 +75,7 @@
 
 .nx-trigger-review-btn:hover,
 .nx-trigger-review-btn.active {
-  background-color: #a3cf62; /* Transitions to signature green on hover */
+  background-color: #a3cf62; 
   color: #0d234d;
   border-color: #a3cf62;
 }
@@ -88,14 +84,13 @@
   font-size: 0.8rem;
 }
 
-/* Slider Track Directional Arrow Buttons */
 .nx-ctrl-btn {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Soft white border wrapper */
+  border: 1px solid rgba(255, 255, 255, 0.2); 
   background-color: transparent;
-  color: #ffffff; /* White arrow icons */
+  color: #ffffff; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,7 +106,6 @@
   transform: translateY(-2px);
 }
 
-/* Discrete Admin Access Key */
 .nx-admin-portal-btn {
   width: 44px;
   height: 44px;
@@ -141,7 +135,6 @@
   animation: pulse 2s infinite;
 }
 
-/* Admin Password Validation Box */
 .nx-admin-auth-panel {
   width: 100%;
   display: flex;
@@ -189,7 +182,6 @@
   font-size: 0.85rem;
 }
 
-/* --- HORIZONTAL TRACK CARDS (High contrast crisp white decks over blue track) --- */
 .nx-testimonial-slider-track {
   display: flex !important;
   gap: 30px;
@@ -211,8 +203,7 @@
 }
 
 .nx-testimonial-slider-card {
-  background: #ffffff; /* Kept crisp white for amazing pop/contrast elements */
-  border-radius: 12px;
+  background: #ffffff; 
   padding: 40px 35px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.05);
