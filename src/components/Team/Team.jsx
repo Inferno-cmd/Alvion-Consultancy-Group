@@ -90,8 +90,8 @@ const Team = () => {
                   ) : (
                     // Default clean placeholder view inside the third empty card element
                     <div className="nx-placeholder-msg">
-                      <span className="nx-msg-title">Position Open</span>
-                      <p className="nx-msg-desc">Executive details and strategic assignment coming soon.</p>
+                      <span className="nx-msg-title"></span>
+                      <p className="nx-msg-desc"></p>
                     </div>
                   )}
                 </div>
