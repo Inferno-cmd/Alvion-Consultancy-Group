@@ -1,130 +1,537 @@
-.testimonials-section {
-    padding: 120px 10%;
-    background-color: #0d234d; 
-    color: #ffffff;
-    text-align: center;
-    scroll-margin-top: 80px;
+/* --- Testimonial Base Shell Structure (Inverted for Dark Blue) --- */
+.nx-testimonial-section {
+  padding: 100px 0;
+  background-color: #0d234d; /* Switched to deep corporate blue background */
+  width: 100%;
+  display: block;
 }
 
-.testimonials-header {
-    margin-bottom: 70px;
-    display: flex;
+.nx-testimonial-section .nx-container {
+  display: block !important; 
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Header Alignment row */
+.nx-testimonial-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 45px;
+  width: 100%;
+}
+
+.nx-testimonial-overline {
+  color: #a3cf62; /* Vibrant accent green remains */
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.nx-testimonial-title {
+  color: #ffffff; /* Changed to white for dark background visibility */
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+/* Admin Indicator Badge next to title */
+.nx-admin-badge {
+  font-size: 0.9rem;
+  background-color: #ef4444;
+  color: #ffffff;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-left: 12px;
+  vertical-align: middle;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Slider Controls Button Mechanics */
+.nx-slider-controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* COMPACT "WRITE A REVIEW" TRIGGER BUTTON */
+.nx-trigger-review-btn {
+  background-color: transparent;
+  color: #ffffff; /* Flipped to white text */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Soft white border */
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 10px;
+  transition: all 0.25s ease;
+}
+
+.nx-trigger-review-btn:hover,
+.nx-trigger-review-btn.active {
+  background-color: #a3cf62; /* Transitions to signature green on hover */
+  color: #0d234d;
+  border-color: #a3cf62;
+}
+
+.nx-btn-icon {
+  font-size: 0.8rem;
+}
+
+/* Slider Track Directional Arrow Buttons */
+.nx-ctrl-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Soft white border wrapper */
+  background-color: transparent;
+  color: #ffffff; /* White arrow icons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.25s ease;
+}
+
+.nx-ctrl-btn:hover {
+  background-color: #ffffff;
+  color: #0d234d;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Discrete Admin Access Key */
+.nx-admin-portal-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  margin-left: 5px;
+}
+
+.nx-admin-portal-btn:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.nx-admin-portal-btn.nx-admin-active {
+  background-color: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
+  animation: pulse 2s infinite;
+}
+
+/* Admin Password Validation Box */
+.nx-admin-auth-panel {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  animation: nxFadeInDown 0.3s ease forwards;
+}
+
+.nx-admin-auth-form {
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(13, 35, 77, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.nx-admin-auth-form input {
+  padding: 8px 12px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  outline: none;
+  font-size: 0.88rem;
+  color: #0d234d;
+}
+
+.nx-admin-auth-form button[type="submit"] {
+  background-color: #0d234d;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.nx-admin-auth-form button[type="button"] {
+  background: transparent;
+  color: #666666;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+/* --- HORIZONTAL TRACK CARDS (High contrast crisp white decks over blue track) --- */
+.nx-testimonial-slider-track {
+  display: flex !important;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  padding: 20px 5px 40px 5px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.nx-testimonial-slider-track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.nx-testimonial-slider-track::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.nx-testimonial-slider-card {
+  background: #ffffff; /* Kept crisp white for amazing pop/contrast elements */
+  border-radius: 12px;
+  padding: 40px 35px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 360px;
+  max-width: 360px;
+  box-sizing: border-box;
+}
+
+/* Admin Delete Button on top of card */
+.nx-admin-delete-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 10;
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.nx-admin-delete-btn:hover {
+  background-color: #ef4444;
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+.nx-quote-icon-wrapper {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  color: rgba(163, 207, 98, 0.15);
+  font-size: 2.2rem;
+}
+
+.nx-stars-row {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.nx-star-icon {
+  color: #ffc107;
+  font-size: 14px;
+}
+
+.nx-customer-feedback {
+  color: #444444;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 30px;
+  flex-grow: 1;
+}
+
+.nx-customer-profile-footer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 20px;
+}
+
+.nx-customer-avatar {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #0d234d 0%, #173b7a 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 2px solid rgba(163, 207, 98, 0.3);
+  overflow: hidden;
+}
+
+.nx-customer-avatar span {
+  color: #a3cf62;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.nx-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nx-customer-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.nx-customer-name {
+  color: #0d234d;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 2px 0;
+}
+
+.nx-customer-title {
+  color: #666666;
+  font-size: 0.85rem;
+}
+
+.nx-company-highlight {
+  color: #0d234d;
+  font-weight: 600;
+}
+
+/* --- REVIEWS INPUT FORM PANEL --- */
+.nx-review-form-wrapper {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 45px;
+  margin-top: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: nxFadeInDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.nx-form-header {
+  margin-bottom: 35px;
+}
+
+.nx-form-header h3 {
+  color: #0d234d;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.nx-form-header p {
+  color: #666666;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.nx-review-grid-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.nx-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nx-col-full {
+  grid-column: span 2;
+}
+
+.nx-form-group label {
+  color: #0d234d;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.nx-form-group input,
+.nx-form-group textarea,
+.nx-form-group select {
+  width: 100%;
+  padding: 14px 18px;
+  background-color: #f8fafc;
+  border: 1px solid rgba(13, 35, 77, 0.1);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #0d234d;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.nx-form-group input:focus,
+.nx-form-group textarea:focus,
+.nx-form-group select:focus {
+  border-color: #0d234d;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(13, 35, 77, 0.05);
+}
+
+.nx-file-upload-container {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 20px;
+  margin: 5px 0;
+}
+
+.nx-custom-file-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background-color: #ffffff;
+  border: 2px dashed rgba(13, 35, 77, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  color: #0d234d !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.nx-custom-file-label:hover {
+  background-color: rgba(163, 207, 98, 0.05);
+  border-color: #a3cf62;
+}
+
+.nx-hidden-file-input {
+  display: none !important;
+}
+
+.nx-upload-icon {
+  color: #a3cf62;
+}
+
+.nx-upload-preview-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #a3cf62;
+}
+
+.nx-upload-preview-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nx-submit-review-btn {
+  background-color: #0d234d;
+  color: #ffffff;
+  padding: 16px 30px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  align-self: flex-start;
+  box-shadow: 0 5px 15px rgba(13, 35, 77, 0.15);
+}
+
+.nx-submit-review-btn:hover {
+  background-color: #163670;
+  color: #a3cf62;
+  transform: translateY(-2px);
+}
+
+/* Animations and Responsive Modifiers */
+@keyframes nxFadeInDown {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+  70% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+@media screen and (max-width: 768px) {
+  .nx-testimonial-header-row {
     flex-direction: column;
-    align-items: center;
-}
+    align-items: flex-start;
+    gap: 20px;
+  }
 
-.testimonials-header .overline {
-    color: #a3cf62; 
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-}
+  .nx-testimonial-title {
+    font-size: 2rem;
+  }
 
-.testimonials-header .main-title {
-    font-size: 2.8rem;
-    font-weight: 800;
-    margin-bottom: 15px;
-}
-
-.title-accent {
-    width: 60px;
-    height: 4px;
-    background: #a3cf62;
-    border-radius: 2px;
-}
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.testimonial-card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 40px;
-    border-radius: 20px;
-    text-align: left;
-    border: 1px solid rgba(163, 207, 98, 0.1);
-    transition: all 0.4s ease;
-    display: flex;
-    flex-direction: column;
+  .nx-slider-controls {
+    width: 100%;
     justify-content: space-between;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.08);
-    border-color: #a3cf62;
-}
-
-.card-top-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.quote-icon {
-    font-size: 4rem;
-    color: #a3cf62;
-    font-family: serif;
-    line-height: 1;
-    height: 30px;
-}
-
-.stars {
-    color: #a3cf62;
-    letter-spacing: 2px;
-    font-size: 0.9rem;
-}
-
-.feedback-text {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #e0e0e0;
-    font-style: italic;
-    margin-bottom: 30px;
-}
-.client-footer {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-}
-
-.client-avatar-placeholder {
-    width: 45px;
-    height: 45px;
-    background: #a3cf62;
-    color: #0d234d;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .nx-trigger-review-btn {
+    flex-grow: 1;
     justify-content: center;
-    font-weight: 800;
-    font-size: 1.2rem;
-}
+    margin-right: 0;
+  }
 
-.client-name {
-    margin: 0;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #ffffff;
-}
+  .nx-testimonial-slider-card {
+    min-width: 290px;
+    max-width: 290px;
+    padding: 30px 25px;
+  }
 
-.client-role {
-    font-size: 0.85rem;
-    color: #a3cf62;
-    display: block;
-    margin-top: 2px;
-}
+  .nx-review-form-wrapper {
+    padding: 25px;
+  }
 
-@media (max-width: 768px) {
-    .testimonials-section {
-        padding: 80px 5%;
-    }
-    .testimonials-header .main-title {
-        font-size: 2.2rem;
-    }
+  .nx-review-grid-form {
+    grid-template-columns: 1fr;
+  }
+
+  .nx-col-full {
+    grid-column: span 1;
+  }
+
+  .nx-file-upload-container {
+    flex-direction: column !important;
+    align-items: flex-start;
+    gap: 10px;
+  }
 }

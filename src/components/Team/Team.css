@@ -1,0 +1,224 @@
+/* --- Team Section Base Layout --- */
+.nx-team-section {
+  padding: 100px 0;
+  background-color: #ffffff; 
+  width: 100%;
+  display: block;
+}
+
+/* FIX: Forces container reset to eliminate any vertical column layouts inherited globally */
+.nx-team-section .nx-container {
+  display: block !important;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Center-aligned header design positioning elements above grid decks */
+.nx-team-header {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 60px auto;
+}
+
+.nx-team-overline {
+  color: #a3cf62;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.nx-team-title {
+  color: #0d234d;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.nx-team-subtitle {
+  color: #555555;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* --- FORCED Left-to-Right Horizontal Display Layout Grid --- */
+.nx-team-grid {
+  display: grid !important;
+  /* Mandates an exact 3-column spread horizontally across high-resolution displays */
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 30px !important;
+  width: 100% !important;
+}
+
+.nx-team-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(13, 35, 77, 0.04);
+  border: 1px solid rgba(13, 35, 77, 0.06);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 420px; /* Keeps card proportions identical regardless of content length */
+}
+
+.nx-team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(13, 35, 77, 0.1);
+}
+
+/* --- Initials Profile Background Headers --- */
+.nx-team-avatar-wrapper {
+  width: 100%;
+  height: 140px;
+  background: linear-gradient(135deg, #0d234d 0%, #1a3e7a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.nx-team-avatar-circle {
+  width: 90px;
+  height: 90px;
+  background-color: #0d234d;
+  border: 3px solid #a3cf62;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  bottom: -45px;
+}
+
+.nx-team-avatar-circle span {
+  color: #a3cf62;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* --- Text Card Context Bodies --- */
+.nx-team-info {
+  padding: 65px 30px 35px 30px; 
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.nx-member-role {
+  color: #a3cf62;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.nx-member-name {
+  color: #0d234d;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.nx-member-bio {
+  color: #666666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+/* --- Social Handle Links Bar --- */
+.nx-team-socials {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto; /* Snaps the social handle rows perfectly onto uniform base thresholds */
+}
+
+.nx-team-socials a {
+  color: #0d234d;
+  font-size: 1.3rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.nx-team-socials a:hover {
+  color: #a3cf62;
+  transform: scale(1.18);
+}
+
+/* --- Blank Placeholder Styling State Extensions --- */
+.nx-card-placeholder {
+  border: 2px dashed rgba(13, 35, 77, 0.15);
+  box-shadow: none;
+  background-color: #fafbfc;
+}
+
+.nx-card-placeholder .nx-team-avatar-wrapper {
+  background: linear-gradient(135deg, #1f2d47 0%, #2c3e5c 100%);
+  opacity: 0.8;
+}
+
+.nx-card-placeholder .nx-team-avatar-circle {
+  border-color: #cccccc;
+  background-color: #2c3e5c;
+}
+
+.nx-card-placeholder .nx-team-avatar-circle span {
+  color: #ffffff;
+  opacity: 0.6;
+}
+
+.nx-placeholder-msg {
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nx-msg-title {
+  color: #777777;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nx-msg-desc {
+  color: #999999;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* --- Mobile Viewport Responsiveness Adjustments --- */
+@media screen and (max-width: 1024px) {
+  .nx-team-grid {
+    grid-template-columns: repeat(2, 1fr) !important; /* Adjusts down cleanly to double rows for tablets */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nx-team-section {
+    padding: 70px 0;
+  }
+
+  .nx-team-title {
+    font-size: 2rem;
+  }
+
+  .nx-team-grid {
+    grid-template-columns: 1fr !important; /* Stacks column boxes cleanly for cellular viewport scaling */
+    gap: 55px !important;
+  }
+}

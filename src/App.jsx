@@ -6,6 +6,7 @@ import About from './components/About/About'
 import Social from './components/Social/social'
 import Servicesoffering from './components/Servicesoffering/services'
 import Testimonial from './components/Testimonial/Testimonial'
+import Team from './components/Team/Team'
 import Partners from './components/Partners/Partners'
 import Contact from './components/Contact/Contact'
 import LegalModal from './components/Footer/LegalModal'
@@ -21,6 +22,7 @@ const App = () => {
       <Social/>
       <Servicesoffering/>
       <Testimonial/>
+      <Team/>
       <Partners/>
       <Contact/>
       <Footer/>
