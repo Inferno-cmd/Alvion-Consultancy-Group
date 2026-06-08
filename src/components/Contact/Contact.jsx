@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
-import './Contact.css';
+import './contact.css'; // CHANGED TO LOWERCASE 'c' TO FIX VERCEL BUILD ERROR
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Contact = () => {
