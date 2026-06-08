@@ -1,10 +1,10 @@
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
-import './contact.css'; // Verified lowercase file import
+import './contact.css'; 
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Contact = () => {
-  // Connected directly to your working Formspree Form ID
+  // Uses your exact form hash
   const [state, handleSubmit] = useForm("xjgdwovg");
 
   return (
@@ -66,6 +66,7 @@ const Contact = () => {
                   <option value="Hardware Sales">Hardware Sales</option>
                   <option value="Security Systems">Security Systems</option>
                 </select>
+                <ValidationError prefix="Service" field="service" errors={state.errors} />
               </div>
 
               <div className="form-group">
