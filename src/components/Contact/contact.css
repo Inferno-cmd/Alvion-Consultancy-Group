@@ -142,3 +142,13 @@
         grid-template-columns: 1fr; 
     }
 }
+.contact-clickable-wrapper {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.contact-clickable-wrapper:hover {
+  transform: translateX(4px); 
+}

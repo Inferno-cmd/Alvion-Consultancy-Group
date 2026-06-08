@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'; // 1. Imported useEffect
+import React, { useEffect } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import './contact.css'; 
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
@@ -6,14 +6,11 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 const Contact = () => {
   const [state, handleSubmit] = useForm("xjgdwovg");
 
-  // 2. Automatically monitors submission success to clear and redirect
   useEffect(() => {
     if (state.succeeded) {
       const timer = setTimeout(() => {
-        // Forces a clean reload back to your landing domain home route
         window.location.href = window.location.origin; 
-      }, 1500); // 1.5 second delay so they read the success message
-
+      }, 1500);
       return () => clearTimeout(timer);
     }
   }, [state.succeeded]);
@@ -32,27 +29,42 @@ const Contact = () => {
             </p>
             
             <div className="contact-item-list">
-              <div className="contact-item">
-                <div className="contact-icon-box"><FaPhoneAlt /></div>
-                <div className="contact-text">
-                  <h4>CALL US</h4>
-                  <p>+254 700 000 000</p>
+              <a href="tel:+254700000000" className="contact-clickable-wrapper">
+                <div className="contact-item">
+                  <div className="contact-icon-box"><FaPhoneAlt /></div>
+                  <div className="contact-text">
+                    <h4>CALL US</h4>
+                    <p>+254 700 000 000</p>
+                  </div>
                 </div>
-              </div>
-              <div className="contact-item">
-                <div className="contact-icon-box"><FaEnvelope /></div>
-                <div className="contact-text">
-                  <h4>EMAIL US</h4>
-                  <p>info@nexatech.co.ke</p>
+              </a>
+
+              {/* TRIGGER EMAIL PROVIDER */}
+              <a href="mailto:info@nexatech.co.ke?subject=Inquiry%20from%20NexaTech%20Website" className="contact-clickable-wrapper">
+                <div className="contact-item">
+                  <div className="contact-icon-box"><FaEnvelope /></div>
+                  <div className="contact-text">
+                    <h4>EMAIL US</h4>
+                    <p>info@nexatech.co.ke</p>
+                  </div>
                 </div>
-              </div>
-              <div className="contact-item">
-                <div className="contact-icon-box"><FaMapMarkerAlt /></div>
-                <div className="contact-text">
-                  <h4>VISIT US</h4>
-                  <p>Nairobi, Kenya</p>
+              </a>
+
+              {/* TRIGGER GOOGLE MAPS NAVIGATION */}
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=Nairobi,+Kenya" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="contact-clickable-wrapper"
+              >
+                <div className="contact-item">
+                  <div className="contact-icon-box"><FaMapMarkerAlt /></div>
+                  <div className="contact-text">
+                    <h4>VISIT US</h4>
+                    <p>Nairobi, Kenya</p>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 
