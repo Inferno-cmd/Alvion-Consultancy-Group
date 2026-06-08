@@ -3,7 +3,6 @@ import './Testimonial.css';
 import { FaStar, FaQuoteLeft, FaChevronLeft, FaChevronRight, FaCamera, FaPen } from 'react-icons/fa';
 
 const Testimonial = () => {
-  // 1. Initial State for reviews
   const [reviews, setReviews] = useState([
     {
       name: "David Ndolo",
@@ -30,11 +29,7 @@ const Testimonial = () => {
       image: null
     }
   ]);
-
-  // 2. Form Toggle State
   const [isFormOpen, setIsFormOpen] = useState(false);
-
-  // 3. Form Input Field State
   const [formData, setFormData] = useState({
     name: '',
     role: '',
@@ -46,7 +41,6 @@ const Testimonial = () => {
 
   const scrollRef = useRef(null);
 
-  // Handle Horizontal Track Scrolling
   const scroll = (direction) => {
     if (scrollRef.current) {
       const { scrollLeft } = scrollRef.current;
@@ -55,7 +49,6 @@ const Testimonial = () => {
     }
   };
 
-  // Handle Optional Photo Upload Preview
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -63,16 +56,12 @@ const Testimonial = () => {
     }
   };
 
-  // Handle Form Submission
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.name || !formData.feedback) return;
 
-    // Insert new submission at the front of the scrolling deck
     setReviews([formData, ...reviews]);
-    
-    // Clear the input fields
-    setFormData({
+        setFormData({
       name: '',
       role: '',
       company: '',
@@ -81,7 +70,6 @@ const Testimonial = () => {
       image: null
     });
 
-    // Close the form panel automatically for a clean success flow
     setIsFormOpen(false);
   };
 
@@ -89,7 +77,6 @@ const Testimonial = () => {
     <section className="nx-testimonial-section" id="testimonial">
       <div className="nx-container">
         
-        {/* HEADER & COMPACT CONTROLS ROW */}
         <div className="nx-testimonial-header-row">
           <div className="nx-testimonial-header-text">
             <span className="nx-testimonial-overline">// CLIENT REVIEWS</span>
@@ -97,7 +84,6 @@ const Testimonial = () => {
           </div>
           
           <div className="nx-slider-controls">
-            {/* TRIGGER BUTTON: Toggles form visibility */}
             <button 
               className={`nx-trigger-review-btn ${isFormOpen ? 'active' : ''}`}
               onClick={() => setIsFormOpen(!isFormOpen)}
@@ -115,8 +101,7 @@ const Testimonial = () => {
           </div>
         </div>
 
-        {/* HORIZONTAL CARDS SCROLL TRACK */}
-        <div className="nx-testimonial-slider-track" ref={scrollRef}>
+          <div className="nx-testimonial-slider-track" ref={scrollRef}>
           {reviews.map((profile, index) => {
             const initials = profile.name
               ? profile.name.split(' ').filter(Boolean).map(w => w[0]).join('').toUpperCase()
@@ -158,7 +143,6 @@ const Testimonial = () => {
           })}
         </div>
 
-        {/* HIDDEN FORM PANEL: Conditionally renders with drop-down animation */}
         {isFormOpen && (
           <div className="nx-review-form-wrapper">
             <div className="nx-form-header">
