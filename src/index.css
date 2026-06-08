@@ -1,25 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "outfit", sans-serif;
 }
-body{
+body {
   background: #ffffff;
 }
-a{
+a {
   text-decoration: none;
   color: inherit;
   line-height: 1;
   cursor: pointer;
 }
-.container{
+.container {
   padding-left: 10%;
   padding-right: 10%;
 }
-.btn{
-  background: #FFF;
+.btn {
+  background: #fff;
   color: #212121;
   padding: 14px 25px;
   font-size: 16px;
@@ -31,12 +31,12 @@ a{
   align-items: center;
   justify-content: center;
 }
-.btn img{
+.btn img {
   margin-left: 2px;
   width: 30px;
 }
 section {
-    scroll-margin-top: 80px; 
+  scroll-margin-top: 80px;
 }
 * {
   box-sizing: border-box;
@@ -45,12 +45,12 @@ section {
 }
 
 body {
-  overflow-x: hidden; 
+  overflow-x: hidden;
   width: 100%;
 }
 
 img {
-  max-width: 100%; 
+  max-width: 100%;
   height: auto;
 }
 html {
@@ -63,4 +63,35 @@ section {
 
 footer {
   scroll-margin-top: 90px;
+}
+
+/*  Media Queries for Responsiveness */
+
+.hero-content {
+  width: 100%; /* Allow it to shrink on mobile */
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px; /* Reduce padding on mobile if needed */
+  box-sizing: border-box; /* Ensures padding doesn't add to width */
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: clamp(2rem, 8vw, 3rem); /* Slightly smaller range for mobile */
+  }
+
+  .hero-content h2 {
+    font-size: 1.25rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-btn {
+    width: 100%; /* Full width button on very small screens */
+    justify-content: center;
+  }
 }
