@@ -1,7 +1,6 @@
 import React from 'react';
 import './ServiceOfferings.css';
 import { FaHdd, FaTools, FaHeadset } from 'react-icons/fa';
-
 const ServiceOfferings = () => {
   const pillars = [
     {
@@ -13,7 +12,7 @@ const ServiceOfferings = () => {
         "Rack Servers & NAS",
         "Networking (Routers / Switches)",
         "UPS & Power Protection",
-        "Peripherals & Accessories"
+        "Peripherals & Accessories" 
       ]
     },
     {
