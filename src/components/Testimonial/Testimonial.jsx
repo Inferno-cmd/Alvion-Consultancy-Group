@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import './Testimonial.css';
-import { FaStar, FaQuoteLeft, FaChevronLeft, FaChevronRight, FaCamera, FaPen } from 'react-icons/fa';
+import { FaStar, FaQuoteLeft, FaChevronLeft, FaChevronRight, FaCamera, FaPen, FaTimes } from 'react-icons/fa';
 
 const Testimonial = () => {
   const [reviews, setReviews] = useState([
@@ -29,6 +29,7 @@ const Testimonial = () => {
       image: null
     }
   ]);
+
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -61,15 +62,7 @@ const Testimonial = () => {
     if (!formData.name || !formData.feedback) return;
 
     setReviews([formData, ...reviews]);
-        setFormData({
-      name: '',
-      role: '',
-      company: '',
-      feedback: '',
-      rating: 5,
-      image: null
-    });
-
+    setFormData({ name: '', role: '', company: '', feedback: '', rating: 5, image: null });
     setIsFormOpen(false);
   };
 
@@ -86,10 +79,10 @@ const Testimonial = () => {
           <div className="nx-slider-controls">
             <button 
               className={`nx-trigger-review-btn ${isFormOpen ? 'active' : ''}`}
-              onClick={() => setIsFormOpen(!isFormOpen)}
+              onClick={() => setIsFormOpen(true)}
             >
               <FaPen className="nx-btn-icon" />
-              {isFormOpen ? "Hide Form" : "Write a Review"}
+              Write a Review
             </button>
 
             <button className="nx-ctrl-btn" onClick={() => scroll('left')} aria-label="Scroll Left">
@@ -101,7 +94,7 @@ const Testimonial = () => {
           </div>
         </div>
 
-          <div className="nx-testimonial-slider-track" ref={scrollRef}>
+        <div className="nx-testimonial-slider-track" ref={scrollRef}>
           {reviews.map((profile, index) => {
             const initials = profile.name
               ? profile.name.split(' ').filter(Boolean).map(w => w[0]).join('').toUpperCase()
@@ -144,91 +137,98 @@ const Testimonial = () => {
         </div>
 
         {isFormOpen && (
-          <div className="nx-review-form-wrapper">
-            <div className="nx-form-header">
-              <h3>Share Your Experience</h3>
-              <p>Your review will immediately populate our live testimonial track above.</p>
-            </div>
-            
-            <form onSubmit={handleSubmit} className="nx-review-grid-form">
-              <div className="nx-form-group nx-col-full">
-                <label>Your Feedback *</label>
-                <textarea 
-                  rows="4" 
-                  placeholder="How has NexaTech helped scale or secure your systems architecture?" 
-                  value={formData.feedback}
-                  onChange={(e) => setFormData({...formData, feedback: e.target.value})}
-                  required
-                />
-              </div>
+          <div className="nx-modal-backdrop" onClick={() => setIsFormOpen(false)}>
+            <div className="nx-review-form-wrapper" onClick={(e) => e.stopPropagation()}>
+              
+              <button className="nx-modal-close-btn" onClick={() => setIsFormOpen(false)} aria-label="Close Form">
+                <FaTimes />
+              </button>
 
-              <div className="nx-form-group">
-                <label>Full Name *</label>
-                <input 
-                  type="text" 
-                  placeholder="e.g., John Doe" 
-                  value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  required
-                />
+              <div className="nx-form-header">
+                <h3>Share Your Experience</h3>
+                <p>Your review will immediately populate our live testimonial track above.</p>
               </div>
-
-              <div className="nx-form-group">
-                <label>Job Title</label>
-                <input 
-                  type="text" 
-                  placeholder="e.g., Operations Director" 
-                  value={formData.role}
-                  onChange={(e) => setFormData({...formData, role: e.target.value})}
-                />
-              </div>
-
-              <div className="nx-form-group">
-                <label>Organization / Company</label>
-                <input 
-                  type="text" 
-                  placeholder="e.g., AfriFoods Logistics" 
-                  value={formData.company}
-                  onChange={(e) => setFormData({...formData, company: e.target.value})}
-                />
-              </div>
-
-              <div className="nx-form-group">
-                <label>Rating</label>
-                <select 
-                  value={formData.rating} 
-                  onChange={(e) => setFormData({...formData, rating: Number(e.target.value)})}
-                >
-                  <option value="5">5 Stars (Excellent)</option>
-                  <option value="4">4 Stars (Good)</option>
-                  <option value="3">3 Stars (Average)</option>
-                </select>
-              </div>
-
-              <div className="nx-form-group nx-col-full nx-file-upload-container">
-                <label className="nx-custom-file-label">
-                  <input 
-                    type="file" 
-                    accept="image/*" 
-                    onChange={handleImageChange} 
-                    className="nx-hidden-file-input"
+              
+              <form onSubmit={handleSubmit} className="nx-review-grid-form">
+                <div className="nx-form-group nx-col-full">
+                  <label>Your Feedback *</label>
+                  <textarea 
+                    rows="4" 
+                    placeholder="How has NexaTech helped scale or secure your systems architecture?" 
+                    value={formData.feedback}
+                    onChange={(e) => setFormData({...formData, feedback: e.target.value})}
+                    required
                   />
-                  <FaCamera className="nx-upload-icon" />
-                  {formData.image ? "✓ Photo Attached" : "Upload Profile Photo (Optional)"}
-                </label>
-                {formData.image && (
-                  <div className="nx-upload-preview-circle">
-                    <img src={formData.image} alt="Preview" />
-                  </div>
-                )}
-              </div>
+                </div>
 
-              <div className="nx-form-group nx-col-full">
-                <button type="submit" className="nx-submit-review-btn">
-                  Post Review Live
-                </button>
-              </div>
-            </form>
+                <div className="nx-form-group">
+                  <label>Full Name *</label>
+                  <input 
+                    type="text" 
+                    placeholder="e.g., John Doe" 
+                    value={formData.name}
+                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    required
+                  />
+                </div>
+
+                <div className="nx-form-group">
+                  <label>Job Title</label>
+                  <input 
+                    type="text" 
+                    placeholder="e.g., Operations Director" 
+                    value={formData.role}
+                    onChange={(e) => setFormData({...formData, role: e.target.value})}
+                  />
+                </div>
+
+                <div className="nx-form-group">
+                  <label>Organization / Company</label>
+                  <input 
+                    type="text" 
+                    placeholder="e.g., AfriFoods Logistics" 
+                    value={formData.company}
+                    onChange={(e) => setFormData({...formData, company: e.target.value})}
+                  />
+                </div>
+
+                <div className="nx-form-group">
+                  <label>Rating</label>
+                  <select 
+                    value={formData.rating} 
+                    onChange={(e) => setFormData({...formData, rating: Number(e.target.value)})}
+                  >
+                    <option value="5">5 Stars (Excellent)</option>
+                    <option value="4">4 Stars (Good)</option>
+                    <option value="3">3 Stars (Average)</option>
+                  </select>
+                </div>
+
+                <div className="nx-form-group nx-col-full nx-file-upload-container">
+                  <label className="nx-custom-file-label">
+                    <input 
+                      type="file" 
+                      accept="image/*" 
+                      onChange={handleImageChange} 
+                      className="nx-hidden-file-input"
+                    />
+                    <FaCamera className="nx-upload-icon" />
+                    {formData.image ? "✓ Photo Attached" : "Upload Profile Photo (Optional)"}
+                  </label>
+                  {formData.image && (
+                    <div className="nx-upload-preview-circle">
+                      <img src={formData.image} alt="Preview" />
+                    </div>
+                  )}
+                </div>
+
+                <div className="nx-form-group nx-col-full">
+                  <button type="submit" className="nx-submit-review-btn">
+                    Post Review Live
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         )}
 
