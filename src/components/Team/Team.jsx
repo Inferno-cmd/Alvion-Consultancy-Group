@@ -1,7 +1,7 @@
 import React from 'react';
 import './Team.css';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6'; // Clean import for the modern X branding
+import { FaXTwitter } from 'react-icons/fa6'; 
 
 const Team = () => {
   const teamMembers = [
@@ -17,12 +17,11 @@ const Team = () => {
       name: "Victor Onyango",
       role: "Co-Founder & CTO",
       bio: "Systems architect and infrastructure lead specializing in network engineering, advanced server configurations, systems security, and high-performance cloud deployment.",
-      linkedin: "https://linkedin.com",
+      linkedin: "https://www.linkedin.com/in/victor-omondi-onyango/",
       github: "https://github.com/VitomsCatena",
       x: "https://x.com/Afrikaan_dream"
     },
     {
-      // Blank member placeholder card slot
       name: "",
       role: "",
       bio: "",
@@ -36,7 +35,6 @@ const Team = () => {
     <section className="nx-team-section" id="team">
       <div className="nx-container">
         
-        {/* HEADER AREA POSITIONED OVER THE CARDS */}
         <div className="nx-team-header">
           <span className="nx-team-overline">// LEADERSHIP</span>
           <h2 className="nx-team-title">Meet Our Executive Team</h2>
@@ -44,18 +42,14 @@ const Team = () => {
             The visionary minds guiding NexaTech Solutions toward building robust, secure, and future-proof digital architectures.
           </p>
         </div>
-
-        {/* HORIZONTAL LEFT-TO-RIGHT COMPONENT GRID */}
         <div className="nx-team-grid">
           {teamMembers.map((member, index) => {
-            // Safety guard checking if name exists before parsing initials
             const initials = member.name
               ? member.name.split(' ').filter(Boolean).map(n => n[0]).join('').toUpperCase()
               : '+';
 
             return (
               <div className={`nx-team-card ${!member.name ? 'nx-card-placeholder' : ''}`} key={index}>
-                {/* Visual Avatar Structure Row */}
                 <div className="nx-team-avatar-wrapper">
                   <div className="nx-team-avatar-circle">
                     <span>{initials}</span>
@@ -88,7 +82,6 @@ const Team = () => {
                       </div>
                     </>
                   ) : (
-                    // Default clean placeholder view inside the third empty card element
                     <div className="nx-placeholder-msg">
                       <span className="nx-msg-title"></span>
                       <p className="nx-msg-desc"></p>
