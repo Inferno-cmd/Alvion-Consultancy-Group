@@ -43,7 +43,7 @@ const Contact = () => {
                   <div className="contact-icon-box"><FaEnvelope /></div>
                   <div className="contact-text">
                     <h4>EMAIL US</h4>
-                    <p>alivionconsultancygroup@gmail.com</p>
+                    <p>alvionconsultancygroup@gmail.com</p>
                   </div>
                 </div>
               </a>
