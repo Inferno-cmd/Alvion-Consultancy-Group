@@ -32,7 +32,7 @@ const Partners = () => {
           <p className="partners-text">
             NexaTech acts as a full-cycle Value-Added Reseller. 
             We partner with global technology leaders to procure, install, and maintain 
-            enterprise-grade hardware for our clients[cite: 1].
+            enterprise-grade hardware for our clients.
           </p>
         </div>
 
