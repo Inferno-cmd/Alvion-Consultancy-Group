@@ -10,17 +10,17 @@ html, body {
   top: 0;
   left: 0;
   width: 100%;
+  height: 85px;
   z-index: 9999;
   transition: all 0.4s ease;
-  padding: 20px 0;
-  background: transparent; 
+  background: transparent;
   display: flex;
   align-items: center;
 }
 
 .nx-navbar.nx-sticky {
-  background: #0d234d; 
-  padding: 12px 0;
+  background: #0d234d;
+  height: 75px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
@@ -28,6 +28,7 @@ html, body {
   max-width: 1200px;
   margin: 0 auto;
   width: 90%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,12 +37,43 @@ html, body {
 .nx-logo-wrapper {
   display: flex;
   align-items: center;
+  text-decoration: none;
+  height: 100%;
+  cursor: pointer;
 }
 
-.nx-logo {
-  height: 45px;
+.nx-logo-icon {
+  height: 70px;
   width: auto;
   object-fit: contain;
+  transition: all 0.4s ease;
+  margin-right: 12px;
+}
+
+.nx-navbar.nx-sticky .nx-logo-icon {
+  height: 40px;
+}
+
+.nx-logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nx-brand-name {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.5px;
+}
+
+.nx-brand-sub {
+  color: #a3cf62;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  margin-top: 4px;
 }
 
 .nx-nav-links {
@@ -62,7 +94,7 @@ html, body {
 }
 
 .nx-nav-links a:hover {
-  color: #a3cf62; 
+  color: #a3cf62;
 }
 
 .nx-btn {
@@ -95,7 +127,7 @@ html, body {
 }
 
 .nx-search-box:focus-within {
-  border-color: #a3cf62; 
+  border-color: #a3cf62;
   background: rgba(255, 255, 255, 0.15);
 }
 
@@ -105,12 +137,12 @@ html, body {
   outline: none;
   color: white;
   font-size: 14px;
-  width: 120px; 
+  width: 120px;
   transition: width 0.4s ease;
 }
 
 .nx-search-box input:focus {
-  width: 180px; 
+  width: 180px;
 }
 
 .nx-search-box input::placeholder {
@@ -131,6 +163,32 @@ html, body {
 }
 
 @media screen and (max-width: 900px) {
+  .nx-navbar {
+    height: 70px;
+  }
+
+  .nx-navbar.nx-sticky {
+    height: 65px;
+  }
+
+  .nx-logo-icon {
+    height: 35px;
+    margin-right: 8px;
+  }
+
+  .nx-navbar.nx-sticky .nx-logo-icon {
+    height: 32px;
+  }
+
+  .nx-brand-name {
+    font-size: 20px;
+  }
+
+  .nx-brand-sub {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
   .nx-menu-toggle {
     display: block;
     font-size: 28px;
@@ -161,12 +219,12 @@ html, body {
     right: 0;
     width: 300px;
     height: 100vh;
-    background: #0d234d; 
+    background: #0d234d;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; 
+    justify-content: flex-start;
     align-items: flex-start;
-    padding: 90px 20px 40px 20px; 
+    padding: 90px 20px 40px 20px;
     gap: 24px;
     transform: translateX(100%);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -191,7 +249,7 @@ html, body {
     padding: 0 !important;
     margin: 0 !important;
     font-size: 30px;
-    color: #a3cf62; 
+    color: #a3cf62;
     cursor: pointer;
     transition: transform 0.3s ease;
     z-index: 10001;
@@ -204,7 +262,7 @@ html, body {
   .nx-nav-links li {
     width: 100%;
     text-align: left;
-    padding-left: 20px; 
+    padding-left: 20px;
   }
 
   .nx-nav-links a {
@@ -215,7 +273,7 @@ html, body {
   }
 
   .nx-search-item {
-    order: -1; 
+    order: -1;
     width: 100%;
     margin: 0 0 15px 0;
     padding-left: 20px !important;
@@ -228,7 +286,7 @@ html, body {
   }
 
   .nx-search-box input {
-    width: 100% !important; 
+    width: 100% !important;
     font-size: 16px;
   }
 
