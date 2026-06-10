@@ -55,10 +55,9 @@ const Navbar = () => {
     <nav className={`nx-navbar ${isSticky ? 'nx-sticky' : ''}`}>
       <div className="nx-container">
         <div className="nx-logo-wrapper">
-          <img src={logo} alt="NexaTech" className="nx-logo" />
+          <img src={logo} alt="Alvion Consultancy Group" className="nx-logo" />
         </div>
 
-        {/* Backdrop overlay to close menu when clicking outside on mobile view */}
         {isMenuOpen && <div className="nx-nav-overlay" onClick={closeMenu}></div>}
 
         <ul className={`nx-nav-links ${isMenuOpen ? 'nx-open' : ''}`}>

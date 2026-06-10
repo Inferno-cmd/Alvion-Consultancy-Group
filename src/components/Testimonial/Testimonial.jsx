@@ -8,7 +8,7 @@ const Testimonial = () => {
       name: "David Ndolo",
       company: "AfriFoods Logistics",
       role: "Operations Director",
-      feedback: "NexaTech completely overhauled our legacy server infrastructure. The migration was seamless, and our systems are running faster and more securely than ever before. Highly recommend their IT support team.",
+      feedback: "Alvion Consultancy Group completely overhauled our legacy server infrastructure. The migration was seamless, and our systems are running faster and more securely than ever before. Highly recommend their IT support team.",
       rating: 5,
       image: null
     },
@@ -24,7 +24,7 @@ const Testimonial = () => {
       name: "Emmanuel Kiprop",
       company: "Rift Valley Agribusiness",
       role: "Founder",
-      feedback: "The security audit conducted by NexaTech saved us from potential catastrophic data vulnerabilities. Their ongoing management gives us true peace of mind to focus on our business scaling.",
+      feedback: "The security audit conducted by Alvion Consultancy Group saved us from potential catastrophic data vulnerabilities. Their ongoing management gives us true peace of mind to focus on our business scaling.",
       rating: 5,
       image: null
     }

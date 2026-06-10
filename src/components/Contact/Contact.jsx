@@ -29,29 +29,25 @@ const Contact = () => {
             </p>
             
             <div className="contact-item-list">
-              <a href="tel:+254700000000" className="contact-clickable-wrapper">
+              <a href="tel:+254740746138" className="contact-clickable-wrapper">
                 <div className="contact-item">
                   <div className="contact-icon-box"><FaPhoneAlt /></div>
                   <div className="contact-text">
                     <h4>CALL US</h4>
-                    <p>+254 700 000 000</p>
+                    <p>+254 740 746 138</p>
                   </div>
                 </div>
               </a>
-
-              {/* TRIGGER EMAIL PROVIDER */}
-              <a href="mailto:info@nexatech.co.ke?subject=Inquiry%20from%20NexaTech%20Website" className="contact-clickable-wrapper">
+              <a href="mailto:alvionconsultancygroup@gmail.com?subject=Inquiry%20from%20NexaTech%20Website" className="contact-clickable-wrapper">
                 <div className="contact-item">
                   <div className="contact-icon-box"><FaEnvelope /></div>
                   <div className="contact-text">
                     <h4>EMAIL US</h4>
-                    <p>info@nexatech.co.ke</p>
+                    <p>alivionconsultancygroup@gmail.com</p>
                   </div>
                 </div>
               </a>
-
-              {/* TRIGGER GOOGLE MAPS NAVIGATION */}
-              <a 
+             <a 
                 href="https://www.google.com/maps/search/?api=1&query=Nairobi,+Kenya" 
                 target="_blank" 
                 rel="noopener noreferrer"
