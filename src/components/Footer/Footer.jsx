@@ -33,7 +33,7 @@ const Footer = () => {
             <div className="social-links-row">
               <a href="https://www.facebook.com/profile.php?id=61590696872045" target="_blank" rel="noreferrer"><FaFacebookF /></a>
               <a href="https://x.com" target="_blank" rel="noreferrer"><FaTimes /></a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer"><FaLinkedinIn /></a>
+              <a href="https://www.linkedin.com/company/alvion-consultancy-group/" target="_blank" rel="noreferrer"><FaLinkedinIn /></a>
               <a href="https://wa.me/254740746138" target="_blank" rel="noreferrer"><FaWhatsapp /></a>
             </div>
           </div>
