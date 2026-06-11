@@ -14,7 +14,7 @@ const About = () => {
             <span className="overline">WHO WE ARE</span>
             <h2 className="main-headline">Your Trusted Partner in Digital Transformation</h2>
             <p className="description-text">
-              NexaTech Solutions Limited is a premier Value-Added Reseller (VAR) dedicated to 
+              Alvion Consultancy Group is a premier Value-Added Reseller (VAR) dedicated to 
               bridging the gap between complex enterprise technology and growing businesses.
             </p>
           </div>
