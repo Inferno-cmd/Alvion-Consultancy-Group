@@ -1,7 +1,6 @@
 import React from 'react';
 import './Partners.css';
 
-// 1. You MUST import the logos like this for Vite to recognize them
 import hpLogo from '../../assets/Hp logo.png';
 import lenovoLogo from '../../assets/Lenovo logo.png';
 import dellLogo from '../../assets/Dell logo.png';
@@ -30,7 +29,7 @@ const Partners = () => {
           <h4 className="partners-overline">// OUR PARTNERS</h4>
           <h2 className="partners-title">Authorized Hardware Suppliers</h2>
           <p className="partners-text">
-            Alvion Consultancy Group acts as a full-cycle Value-Added Reseller. 
+            AnonTech acts as a full-cycle Value-Added Reseller. 
             We partner with global technology leaders to procure, install, and maintain 
             enterprise-grade hardware for our clients.
           </p>

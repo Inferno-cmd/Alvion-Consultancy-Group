@@ -32,7 +32,7 @@ const OurSolution = () => {
           <span className="overline">// OUR SOLUTION</span>
           <h1 className="solutions-main-title">One Partner, Total Ownership.</h1>
           <p className="solutions-subtitle">
-            Alvion Consultancy Group operates as a full-cycle Value-Added Reseller. We don't just sell boxes; 
+            AnonTech Solution operates as a full-cycle Value-Added Reseller. We don't just sell boxes; 
             we consult, procure, deploy, and maintain the heartbeat of your technology.
           </p>
         </div>

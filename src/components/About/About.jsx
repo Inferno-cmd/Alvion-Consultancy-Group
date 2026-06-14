@@ -14,7 +14,7 @@ const About = () => {
             <span className="overline">WHO WE ARE</span>
             <h2 className="main-headline">Your Trusted Partner in Digital Transformation</h2>
             <p className="description-text">
-              Alvion Consultancy Group is a premier Value-Added Reseller (VAR) dedicated to 
+              AnonTech Solutions is a premier Value-Added Reseller (VAR) dedicated to 
               bridging the gap between complex enterprise technology and growing businesses.
             </p>
           </div>
@@ -44,12 +44,11 @@ const About = () => {
             </div>
           </div>
 
-          {/* Horizontal Stats Bar at the bottom of the section */}
           <div className="horizontal-stats-bar">
             <div className="stat-unit">
               <FaProjectDiagram className="stat-icon" />
               <div className="stat-info">
-                <h4>500+</h4>
+                <h4>100+</h4>
                 <p>Projects Delivered</p>
               </div>
             </div>

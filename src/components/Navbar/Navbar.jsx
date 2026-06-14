@@ -55,12 +55,9 @@ const Navbar = () => {
     <nav className={`nx-navbar ${isSticky ? 'nx-sticky' : ''}`}>
       <div className="nx-container">
         
+        {/* UPDATED LOGO SECTION */}
         <div className="nx-logo-wrapper">
-          <img src={logo} alt="Alvion Logo" className="nx-logo-icon" />
-          <div className="nx-logo-text">
-            <span className="nx-brand-name">Alvion</span>
-            <span className="nx-brand-sub">CONSULTANCY GROUP</span>
-          </div>
+          <img src={logo} alt="Anon Tech Logo" className="nx-logo-icon" />
         </div>
 
         {isMenuOpen && <div className="nx-nav-overlay" onClick={closeMenu}></div>}

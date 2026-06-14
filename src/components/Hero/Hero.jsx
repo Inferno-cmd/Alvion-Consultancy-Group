@@ -14,7 +14,7 @@ const Hero = () => {
     <section className="hero-section" id="hero">
       <div className="hero-overlay">
         <div className="hero-content">
-          <h1>Alvion Consultancy Group</h1>
+          <h1>AnonTech Solution</h1>
           <h2>Empowering Businesses with Enterprise Technology</h2>
           <p>Innovative value-oriented tech services for organizations and growing brands.</p>
           <button className="hero-btn" onClick={handleLearnMore}>

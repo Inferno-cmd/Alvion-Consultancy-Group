@@ -17,7 +17,7 @@ const Footer = () => {
   const openLegal = (title, type) => (e) => {
     e.preventDefault();
     const content = type === 'privacy' 
-      ? <p>Alvion Consultancy Group is committed to protecting your data. We use enterprise-grade encryption for all client communications.</p>
+      ? <p>AnonTech Solutions is committed to protecting your data. We use enterprise-grade encryption for all client communications.</p>
       : <p>Engagement with our services is governed by our standard Managed Service Provider (MSP) and hardware procurement agreements.</p>;
     
     setModalConfig({ isOpen: true, title, content });
@@ -28,7 +28,7 @@ const Footer = () => {
       <div className="nx-container">
         <div className="footer-sitemap">
           <div className="footer-col brand-info">
-            <h2 className="footer-logo">Alvion Consultancy<span>Group</span></h2>
+            <h2 className="footer-logo">AnonTech Solutions<span>Group</span></h2>
             <p className="brand-text">Empowering SMBs with enterprise-grade technology solutions.</p>
             <div className="social-links-row">
               <a href="https://www.facebook.com/profile.php?id=61590696872045" target="_blank" rel="noreferrer"><FaFacebookF /></a>
@@ -57,7 +57,7 @@ const Footer = () => {
             <h4>Technical</h4>
             <ul>
               <li><a href="tel:+254740746138">System Status</a></li>
-              <li><a href="mailto:alvionconsultancygroup@gmail.com">Support Email</a></li>
+              <li><a href="mailto:anontechsupport@gmail.com">Support Email</a></li>
               <li><a href="#api">API Docs</a></li>
             </ul>
           </div>
@@ -73,7 +73,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom-bar">
-          <p>&copy; 2026 Alvion Consultancy Group. All rights reserved.</p>
+          <p>&copy; 2026 AnonTech Solutions. All rights reserved.</p>
         </div>
       </div>
 

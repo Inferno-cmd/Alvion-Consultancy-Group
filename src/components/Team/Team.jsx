@@ -39,7 +39,7 @@ const Team = () => {
           <span className="nx-team-overline">// LEADERSHIP</span>
           <h2 className="nx-team-title">Meet Our Executive Team</h2>
           <p className="nx-team-subtitle">
-            The visionary minds guiding NexaTech Solutions toward building robust, secure, and future-proof digital architectures.
+            The visionary minds guiding AnonTech Solutions toward building robust, secure, and future-proof digital architectures.
           </p>
         </div>
         <div className="nx-team-grid">

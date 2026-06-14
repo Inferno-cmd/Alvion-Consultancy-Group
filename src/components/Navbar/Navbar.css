@@ -42,38 +42,17 @@ html, body {
   cursor: pointer;
 }
 
+/* Made the standalone icon larger for standard view */
 .nx-logo-icon {
-  height: 70px;
+  height: 75px;
   width: auto;
   object-fit: contain;
   transition: all 0.4s ease;
-  margin-right: 12px;
 }
 
+/* Kept the icon prominent even when scrolling */
 .nx-navbar.nx-sticky .nx-logo-icon {
-  height: 40px;
-}
-
-.nx-logo-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.nx-brand-name {
-  color: #ffffff;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: 0.5px;
-}
-
-.nx-brand-sub {
-  color: #a3cf62;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  margin-top: 4px;
+  height: 55px; 
 }
 
 .nx-nav-links {
@@ -171,22 +150,13 @@ html, body {
     height: 65px;
   }
 
+  /* Increased mobile logo visibility */
   .nx-logo-icon {
-    height: 35px;
-    margin-right: 8px;
+    height: 55px; 
   }
 
   .nx-navbar.nx-sticky .nx-logo-icon {
-    height: 32px;
-  }
-
-  .nx-brand-name {
-    font-size: 20px;
-  }
-
-  .nx-brand-sub {
-    font-size: 8px;
-    letter-spacing: 1px;
+    height: 45px;
   }
 
   .nx-menu-toggle {
