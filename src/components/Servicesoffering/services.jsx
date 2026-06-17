@@ -4,39 +4,39 @@ import { FaHdd, FaTools, FaHeadset } from 'react-icons/fa';
 
 const ServiceOfferings = () => {
   const pillars = [
-    {
-      title: "SALES & HARDWARE",
-      icon: <FaHdd />,
-      className: "sales-pillar",
+    { title: "WEB DEVELOPMENT & GRAPHIC DESIGN",
+      icon: <FaTools />,
+      className:"Web Support",
       items: [
-        "Desktops & Laptops",
-        "Rack Servers & NAS",
-        "Networking (Routers / Switches)",
-        "UPS & Power Protection",
-        "Peripherals & Accessories"
+        "Website Development and Maintenance",
+        "Graphic Designs",
+        "Management Systems Designs and Development", 
+        "Digital marketing",
+        "Business support and development"
       ]
     },
     {
-      title: "FIELD SERVICES",
-      icon: <FaTools />,
-      className: "field-pillar",
+      title: "SALES, HARDWARE & FIELD SERVICES",
+      icon: <FaHdd />,
+      className: "sales-pillar",
       items: [
-        "Physical Installation",
-        "Structured Cabling (Cat6/Fibre)",
+        "Desktops, Laptops, Peripherals & Accessories",
+        "Networking (Routers / Switches)",
+        "UPS & Power Protection",
         "CCTV & Security Systems",
         "Printer & Copier Networking",
         "Server Room Setup"
       ]
     },
-    {
+     {
       title: "TECHNICAL SUPPORT",
       icon: <FaHeadset />,
       className: "tech-pillar",
       items: [
-        "OS & Software Troubleshooting",
-        "RAM / SSD Upgrades",
+        "OS & Software installation and Troubleshooting",
+        "Systems updates and upgrades",
         "Thermal Cleaning & Servicing",
-        "Virus & Malware Removal",
+        "Virus & Malware and system security audit",
         "Remote Helpdesk (MSP)"
       ]
     }

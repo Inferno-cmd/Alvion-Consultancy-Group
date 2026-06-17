@@ -8,7 +8,7 @@ const Team = () => {
     {
       name: "Albert Olukwo",
       role: "Founder & CEO",
-      bio: "Full-stack engineer and digital platforms strategist specializing in scalable web applications, business systems optimization, and regional technology infrastructure.",
+      bio: "Full-stack Developer and digital platforms strategist specializing in scalable web applications, Business Systems optimization and Business Development support, and regional technology infrastructure.",
       linkedin: "https://www.linkedin.com/in/albert-olukwo-4b6b57360?utm_source=share_via&utm_content=profile&utm_medium=member_android",
       github: "https://github.com/Inferno-cmd",
       x: "https://x.com/_banterna"
@@ -16,7 +16,7 @@ const Team = () => {
     {
       name: "Victor Onyango",
       role: "Co-Founder & CTO",
-      bio: "Systems architect and infrastructure lead specializing in network engineering, advanced server configurations, systems security, and high-performance cloud deployment.",
+      bio: "Systems architect and infrastructure, Full stack web developer, advanced server configurations, systems security, high-performance cloud deployment, business systems optimization and Business development support.",
       linkedin: "https://www.linkedin.com/in/victor-omondi-onyango/",
       github: "https://github.com/VitomsCatena",
       x: "https://x.com/Afrikaan_dream"

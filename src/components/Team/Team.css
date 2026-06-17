@@ -1,4 +1,3 @@
-/* --- Team Section Base Layout --- */
 .nx-team-section {
   padding: 100px 0;
   background-color: #ffffff; 
@@ -6,7 +5,6 @@
   display: block;
 }
 
-/* FIX: Forces container reset to eliminate any vertical column layouts inherited globally */
 .nx-team-section .nx-container {
   display: block !important;
   width: 100%;
@@ -15,8 +13,6 @@
   padding: 0 20px;
   box-sizing: border-box;
 }
-
-/* Center-aligned header design positioning elements above grid decks */
 .nx-team-header {
   text-align: center;
   max-width: 750px;
@@ -45,10 +41,8 @@
   line-height: 1.6;
 }
 
-/* --- FORCED Left-to-Right Horizontal Display Layout Grid --- */
 .nx-team-grid {
   display: grid !important;
-  /* Mandates an exact 3-column spread horizontally across high-resolution displays */
   grid-template-columns: repeat(3, 1fr) !important;
   gap: 30px !important;
   width: 100% !important;
@@ -63,7 +57,7 @@
   flex-direction: column;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  min-height: 420px; /* Keeps card proportions identical regardless of content length */
+  min-height: 420px; 
 }
 
 .nx-team-card:hover {
@@ -71,7 +65,6 @@
   box-shadow: 0 20px 40px rgba(13, 35, 77, 0.1);
 }
 
-/* --- Initials Profile Background Headers --- */
 .nx-team-avatar-wrapper {
   width: 100%;
   height: 140px;
@@ -103,7 +96,6 @@
   letter-spacing: 1px;
 }
 
-/* --- Text Card Context Bodies --- */
 .nx-team-info {
   padding: 65px 30px 35px 30px; 
   display: flex;
@@ -136,13 +128,12 @@
   flex-grow: 1;
 }
 
-/* --- Social Handle Links Bar --- */
 .nx-team-socials {
   display: flex;
   gap: 20px;
   align-items: center;
   justify-content: center;
-  margin-top: auto; /* Snaps the social handle rows perfectly onto uniform base thresholds */
+  margin-top: auto; 
 }
 
 .nx-team-socials a {
@@ -158,7 +149,6 @@
   transform: scale(1.18);
 }
 
-/* --- Blank Placeholder Styling State Extensions --- */
 .nx-card-placeholder {
   border: 2px dashed rgba(13, 35, 77, 0.15);
   box-shadow: none;
@@ -201,10 +191,9 @@
   line-height: 1.5;
 }
 
-/* --- Mobile Viewport Responsiveness Adjustments --- */
 @media screen and (max-width: 1024px) {
   .nx-team-grid {
-    grid-template-columns: repeat(2, 1fr) !important; /* Adjusts down cleanly to double rows for tablets */
+    grid-template-columns: repeat(2, 1fr) !important; 
   }
 }
 
@@ -218,7 +207,7 @@
   }
 
   .nx-team-grid {
-    grid-template-columns: 1fr !important; /* Stacks column boxes cleanly for cellular viewport scaling */
+    grid-template-columns: 1fr !important; 
     gap: 55px !important;
   }
 }
