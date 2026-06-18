@@ -1,23 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+/* 1. GLOBAL RESETS (Consolidated) */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "outfit", sans-serif;
+  font-family: "Outfit", sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #ffffff;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  width: 100%;
 }
+
 a {
   text-decoration: none;
   color: inherit;
   line-height: 1;
   cursor: pointer;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Removes tiny extra space below images */
+}
+
+/* 2. BASE LAYOUT */
 .container {
   padding-left: 10%;
   padding-right: 10%;
 }
+
+section,
+footer {
+  scroll-margin-top: 90px;
+}
+
+/* 3. BUTTON STYLES */
 .btn {
   background: #fff;
   color: #212121;
@@ -30,54 +55,44 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
 }
+
 .btn img {
-  margin-left: 2px;
-  width: 30px;
-}
-section {
-  scroll-margin-top: 80px;
-}
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  margin-left: 8px; /* Slightly more space between text and icon */
+  width: 20px; /* Reduced so the icon doesn't overpower the text */
 }
 
-body {
-  overflow-x: hidden;
-  width: 100%;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-html {
-  scroll-behavior: smooth;
-}
-
-section {
-  scroll-margin-top: 90px;
-}
-
-footer {
-  scroll-margin-top: 90px;
-}
-
-/*  Media Queries for Responsiveness */
-
+/* 4. HERO SECTION */
 .hero-content {
-  width: 100%; /* Allow it to shrink on mobile */
+  width: 100%;
   max-width: 900px;
   margin: 0 auto;
-  padding: 20px; /* Reduce padding on mobile if needed */
-  box-sizing: border-box; /* Ensures padding doesn't add to width */
+  padding: 20px;
 }
 
+/* =========================================
+   MEDIA QUERIES FOR MOBILE RESPONSIVENESS
+========================================= */
+
+/* Tablets and Laptops (Max Width: 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+/* Mobile Phones and Small Tablets*/
 @media (max-width: 768px) {
+  /* Reduce padding for better readability on small screens */
+  .container {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
   .hero-content h1 {
-    font-size: clamp(2rem, 8vw, 3rem); /* Slightly smaller range for mobile */
+    font-size: clamp(2rem, 8vw, 3rem);
   }
 
   .hero-content h2 {
@@ -87,11 +102,32 @@ footer {
   .hero-content p {
     font-size: 1rem;
   }
-}
 
+  /*Force Grid Layouts to stack into 1 column */
+  .grid,
+  .services-grid,
+  .features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  /*Force Flexbox Layouts to stack vertically */
+  .flex,
+  .row {
+    flex-direction: column !important;
+  }
+}
+/* Max Width: 480px) */
 @media (max-width: 480px) {
-  .hero-btn {
-    width: 100%; /* Full width button on very small screens */
+  .container {
+    padding-left: 20px; /* Fixed padding for maximum screen usage */
+    padding-right: 20px;
+  }
+
+  /* Make buttons full width on tiny screens for easier tapping */
+  .hero-btn,
+  .btn {
+    width: 100%;
     justify-content: center;
   }
 }
